@@ -11,14 +11,10 @@
 #'
 #' @export
 #'
-#' @import dplyr
-#' @import tidyr
-#' @import magrittr
-#' @import formattable
 #'
 #' @importFrom magrittr %>%
 #'
-#' @examples 1+1 
+#' @examples 1+1
 tb_conf <- function(x, inst, year, state){
     if (inst == TRUE){
         y <- x %>%
@@ -31,7 +27,7 @@ tb_conf <- function(x, inst, year, state){
             dplyr::group_by(DES_INS_UNIDAD, DES_DIAG_FINAL) %>%
             dplyr::summarise(count = dplyr::n()) %>%
             tidyr::spread(key = "DES_DIAG_FINAL", fill = 0, value = "count")
-        
+
         if(ncol(y) == 2) {
             if(names(y)[2] == c("DENGUE NO GRAVE")) {
                 names(y) <- c("Instituciones", "DNG")
@@ -41,11 +37,11 @@ tb_conf <- function(x, inst, year, state){
                 names(y) <- c("Instituciones", "DG")
             }
         }
-        
+
        if(ncol(y) == 4){
            names(y) <- c("Instituciones", "DCSA", "DG", "DNG")
-       } 
-        
+       }
+
         y$Total <- rowSums(y[,-1])
         #Set a few color variables to make our table more visually appealing
         formattable::formattable(y,

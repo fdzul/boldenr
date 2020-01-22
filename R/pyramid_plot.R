@@ -12,9 +12,6 @@
 #' @return a pyramid plot of class ggplot.
 #' @export
 #'
-#' @import dplyr
-#' @import ggplot2
-#' @import magrittr
 #'
 #' @importFrom magrittr %>%
 #'

@@ -16,11 +16,6 @@
 #'
 #' @return a heatmap of confirmed and probables cases by health jurisdiction.
 #' @export
-#' @import dplyr
-#' @import stringr
-#' @import tidyr
-#' @import superheat
-#' @import magrittr
 #'
 #' @importFrom magrittr %>%
 #'

@@ -12,9 +12,6 @@
 #' @return a map of risk or confirmed cases.
 #' @export
 #'
-#' @import dplyr
-#' @import magrittr
-#' @import sf
 #'
 #' @importFrom magrittr %>%
 #'

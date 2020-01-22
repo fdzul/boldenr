@@ -7,13 +7,8 @@
 #' @return a plot of class ggplot.
 #' @export
 #'
-#' @import dplyr
-#' @import ggplot2
 #' @import stats
 #' @import grid
-#' @import png
-#' @import mgrittr
-#' @import stringr
 #'
 #' @importFrom magrittr %>%
 #'
@@ -23,7 +18,7 @@ plot_state_serotype <- function(dataset, year){
     x_state <- y %>%
         dplyr::filter(ANO == year &
                    DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
-                                         "DENGUE NO GRAVE", 
+                                         "DENGUE NO GRAVE",
                                          "DENGUE GRAVE")) %>%
         dplyr::group_by(DES_EDO_RES, DES_DIAG_FINAL) %>%
         dplyr::summarise(n = dplyr::n()) %>%
@@ -73,7 +68,7 @@ plot_state_serotype <- function(dataset, year){
         dplyr::group_by(DES_EDO_RES, DENGUE_SER_TRIPLEX) %>%
         dplyr::summarise(n = dplyr::n()) %>%
         dplyr::mutate(DES_EDO_RES2 = stringr::str_to_title(DES_EDO_RES)) %>%
-        ggplot2::ggplot(aes(x = stats::reorder(DES_EDO_RES2, n, 
+        ggplot2::ggplot(aes(x = stats::reorder(DES_EDO_RES2, n,
                                                FUN = sum),
                    y = n,
                    label = n,

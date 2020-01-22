@@ -10,12 +10,6 @@
 #' @return a heatmap confirmed or probables cases by localities.
 #' @export
 #'
-#' @import stringr
-#' @import dplyr
-#' @import tidyr
-#' @import superheat
-#' @import viridis
-#' @import magrittr
 #'
 #' @importFrom magrittr %>%
 #'
@@ -26,7 +20,7 @@
 #' @seealso \link[boldenr]{epidemiological_channel}
 #'
 #' @details the heatmap is based in the package superheat and the function \link[superheat]{superheat}
-heatmap_loc_prob_conf <- function(x, probable, 
+heatmap_loc_prob_conf <- function(x, probable,
                                   year, state,
                                   rtitlesize,
                                   mtextsize,

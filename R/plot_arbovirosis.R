@@ -9,10 +9,6 @@
 #'
 #' @export
 #'
-#' @import dplyr
-#' @import tidyr
-#' @import ggplot2
-#' @import magrittr
 #'
 #' @importFrom magrittr %>%
 #'
@@ -55,18 +51,18 @@ plot_arbovirosis <- function(x, state, year1, year2){
     ##
     ggplot(data = probables,
            aes(x = SEM)) +
-        geom_area(aes(y = !! p1), 
+        geom_area(aes(y = !! p1),
                   colour = "white",
                   fill = "lightgreen", alpha = 0.90) +
         theme_classic() +
         ylab("Casos Probables por Arbovirosis (Áreas)") +
         xlab("Semanas Epidemiológicas")+
         theme(title = element_text(size = 12)) +
-        geom_area(aes(y = !! p2), 
+        geom_area(aes(y = !! p2),
                   col = "white",
                   fill = "lightblue", alpha = 0.80) +
         annotate("text",
-                 label = paste0(year1), 
+                 label = paste0(year1),
                  x = 38,
                  y = 1000,
                  size = 6,
