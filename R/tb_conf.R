@@ -12,8 +12,6 @@
 #' @export
 #'
 #'
-#' @importFrom magrittr %>%
-#'
 #' @examples 1+1
 tb_conf <- function(x, inst, year, state){
     if (inst == TRUE){

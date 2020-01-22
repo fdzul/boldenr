@@ -19,8 +19,6 @@
 #' @export
 #'
 #' @import stats
-#'
-#' @importFrom magrittr %>%
 #' @importFrom stats quantile
 #'
 #' @examples 1+1

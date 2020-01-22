@@ -13,7 +13,6 @@
 #' @export
 #'
 #' @import utils
-#' @importFrom magrittr %>%
 #' @importFrom utils data
 #' @importFrom utils read.table
 #'

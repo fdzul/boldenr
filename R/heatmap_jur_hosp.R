@@ -18,7 +18,6 @@
 #' @return A heatmap of hospitalized cases by health jurisdiction.
 #' @export
 #'
-#' @importFrom magrittr %>%
 #'
 #' @examples 1+1
 #'

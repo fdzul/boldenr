@@ -11,7 +11,6 @@
 #' @export
 #'
 #'
-#' @importFrom magrittr %>%
 #'
 #' @examples
 #'

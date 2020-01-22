@@ -10,7 +10,6 @@
 #' @export
 #'
 #'
-#' @importFrom magrittr %>%
 #'
 #' @examples 1+1
 #'

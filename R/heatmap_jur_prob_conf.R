@@ -17,7 +17,6 @@
 #' @return a heatmap of confirmed and probables cases by health jurisdiction.
 #' @export
 #'
-#' @importFrom magrittr %>%
 #'
 #' @examples 1+1
 #' @references xxxxx
