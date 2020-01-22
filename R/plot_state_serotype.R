@@ -10,8 +10,6 @@
 #' @import stats
 #' @import grid
 #'
-#' @importFrom magrittr %>%
-#'
 #' @examples 1+1
 plot_state_serotype <- function(dataset, year){
     y <- dataset
