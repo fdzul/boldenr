@@ -12,15 +12,7 @@
 #'
 #' @export
 #'
-#' @import data.table
-#' @import dplyr
-#' @import purrr
 #' @import utils
-#' @import stringr
-#' @import utils
-#' @import tidyr
-#' @import magrittr
-#'
 #' @importFrom magrittr %>%
 #' @importFrom utils data
 #' @importFrom utils read.table
@@ -33,12 +25,12 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
         l <- list.files(path, full.names = TRUE, pattern = "txt")
         ## Step 2. Make the function
         unzip_list <- function(x){
-            y <- data.table::fread(x, header = TRUE, quote = "", 
-                                   fill=TRUE, 
+            y <- data.table::fread(x, header = TRUE, quote = "",
+                                   fill=TRUE,
                                    encoding = "Latin-1")
             #y <- readr::read_delim(x)
-            y <- dplyr::select(y, 
-                               CVE_EDO_RES, 
+            y <- dplyr::select(y,
+                               CVE_EDO_RES,
                                DES_EDO_RES,
                                CVE_JUR_RES, DES_JUR_RES,
                                CVE_MPO_RES, DES_MPO_RES,
@@ -52,7 +44,7 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
         ## Step 3. apply the function for each file and row bind
         #y <- data.table::fread(l[[1]], header = TRUE, quote="")
         x <- purrr::map_dfr(purrr::map(l, unzip_list), rbind)
-        
+
         ## Step 4. correct the acentos and ñ
         x$DES_JUR_RES <- stringr::str_replace(x$DES_JUR_RES, pattern = "<d1>",replacement = "N")
         x$DES_LOC_RES <- stringr::str_replace(x$DES_LOC_RES, pattern = "<c1>",replacement = "A")
