@@ -1,11 +1,31 @@
 Package: boldenr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: boldenr: a package designed to generate of Dengue Bulletin of Veracruz state.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Felipe Antonio Dzul Manzanilla
+Maintainer: The package maintainer <felipe.dzul.m@gmail.com>
+Authors@R: c(person(given = "Felipe Antonio",
+           family = "Dzul Manzanilla",
+           role = c("aut", "cre"),
+           email = "felipe.dzul.m@gmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0002-2085-9141")),
+           person(given = "Luis",
+           family = "Hernández-Herrera",
+           role = c("ctb"),
+           email = "lhherrera15@gmail.com"),
+           person(given = "Fabian",
+           family = "Correa-Morales",
+           role = c("ctb"),
+           email = "fabiancorrea@msn.com"),
+           person(given = "Arturo",
+           family = "Báez-Hernández",
+           role = c("ctb"),
+           email = "abaez@ssaver.gob.mx"),
+           person(given = "Carlos",
+           family = "Gasteasoro",
+           role = c("ctb"),
+           email = "carlosgasteasoro.27@hotmail.com"))
+Description: This package contains functions designed specifically to generate graphs, tables, heatmap, maps and hotspots that allow designing the dengue bulletin of the state of Veracruz
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
