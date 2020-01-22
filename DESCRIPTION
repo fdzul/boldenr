@@ -26,6 +26,6 @@ Authors@R: c(person(given = "Felipe Antonio",
            role = c("ctb"),
            email = "carlosgasteasoro.27@hotmail.com"))
 Description: This package contains functions designed specifically to generate graphs, tables, heatmap, maps and hotspots that allow designing the dengue bulletin of the state of Veracruz
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
