@@ -18,15 +18,6 @@
 #' @return A heatmap of hospitalized cases by health jurisdiction.
 #' @export
 #'
-#' @import lubridate
-#' @import dplyr
-#' @import stringr
-#' @import superheat
-#' @import viridis
-#' @import tidyr
-#' @import stringr
-#' @import magrittr
-#'
 #' @importFrom magrittr %>%
 #'
 #' @examples 1+1
