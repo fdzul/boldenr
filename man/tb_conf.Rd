@@ -24,5 +24,5 @@ a formattable object.
 Generates a table of the cases confirmed by institution or age groups
 }
 \examples{
-1+1 
+1+1
 }

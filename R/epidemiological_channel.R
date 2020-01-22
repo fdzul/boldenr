@@ -19,11 +19,6 @@
 #' @export
 #'
 #' @import stats
-#' @import stringr
-#' @import dplyr
-#' @import ggplot2
-#' @import tidyr
-#' @import magrittr
 #'
 #' @importFrom magrittr %>%
 #' @importFrom stats quantile
