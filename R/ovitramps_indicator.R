@@ -12,22 +12,15 @@
 #'
 #' @references
 #'
-#' @import tidyr
-#' @import dplyr
-#' @import stringr
-#' @import ggplot2
-#' @import magrittr
-#'
-#' @importFrom magrittr %>%
 #'
 #' @examples 1+1
 #'
 #' @references xxxxx
 #'
-#' @seealso \link[boldenr]{epidemiological_channel}
+#' @seealso \link[boldenr]{epidemiological_channel} and \link[boldenr]{entomological_channel}
 #'
 #' @details xxxx
-indicador_ovitrampas <- function(x, nom_loc = NULL, all){
+ovitrampas_indicator <- function(x, nom_loc = NULL, all){
 
     ##  Step 2. modify the values of the localidad variable
     x$Localidad <- ifelse(x$Localidad %in% c("Ampliación Las Bajadas",
