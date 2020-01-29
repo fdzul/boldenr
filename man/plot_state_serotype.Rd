@@ -4,10 +4,18 @@
 \alias{plot_state_serotype}
 \title{Plot the dengue cases by state and serotype}
 \usage{
-plot_state_serotype(dataset, year)
+plot_state_serotype(dataset, year, scale_serotype, x, y)
 }
 \arguments{
-\item{dataset}{is the dataset of sinave http://vectores.sinave.gob.mx/.}
+\item{dataset}{is the dataset of sinave \link{http://vectores.sinave.gob.mx/}.}
+
+\item{year}{is the year of dataset.}
+
+\item{scale_serotype}{is the scale of the dengue serotype plot.}
+
+\item{x}{The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.}
+
+\item{y}{The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.}
 }
 \value{
 a plot of class ggplot.
@@ -17,6 +25,9 @@ Plot the dengue cases by state and serotype
 }
 \examples{
 1+1
+}
+\seealso{
+\code{\link[cowplot]{drawplot}}.
 }
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
