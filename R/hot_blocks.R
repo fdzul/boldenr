@@ -11,17 +11,6 @@
 #'
 #' @return a map of risk or eggs map based in the percentil.
 #'
-#' @export
-#'
-#' @import tidyr
-#' @import stringr
-#' @import dplyr
-#' @import stats
-#' @import tmap
-#' @import magrittr
-#'
-#' @importFrom magrittr %>%
-#' @importFrom stats quantile
 #'
 #' @examples 1+1
 #'
