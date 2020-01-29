@@ -10,13 +10,6 @@
 #'
 #' @export
 #'
-#' @import dplyr
-#' @import tidyr
-#' @import magrittr
-#' @import formattable
-#' @import lubridate
-#'
-#' @importFrom magrittr %>%
 #'
 #' @examples 1+1
 #'
