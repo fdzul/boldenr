@@ -11,7 +11,6 @@
 #'
 #' @return a map of risk or eggs map based in the percentil.
 #'
-#'
 #' @examples 1+1
 #'
 #' @references xxxxx
