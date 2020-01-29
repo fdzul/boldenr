@@ -17,11 +17,6 @@
 #'
 #' @export
 #'
-#' @import dplyr
-#' @import tidyr
-#' @import stringr
-#' @import stats
-#' @import ggplot2
 #'
 #' @importFrom magrittr %>%
 #'
