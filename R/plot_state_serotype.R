@@ -11,7 +11,8 @@
 #' @import grid
 #'
 #' @examples 1+1
-plot_state_serotype <- function(dataset, year){
+plot_state_serotype <- function(dataset, year, scale_serotype, x_leg,
+                                y_leg){
     y <- dataset
     x_state <- y %>%
         dplyr::filter(ANO == year &
@@ -88,23 +89,23 @@ plot_state_serotype <- function(dataset, year){
         ggplot2::theme(legend.background = element_rect(fill="transparent")) +
         ggplot2::theme(legend.key = element_rect(colour = NA, fill = NA))
 
-    ser + ggplot2::ggtitle(label = "Serotipos por Estado") +
+    ser <- ser + ggplot2::ggtitle(label = "Serotipos por Estado") +
         ggplot2::theme(plot.title = element_text(color="black",
-                                        size= 16,
-                                        face="bold.italic"))
+                                                 size= 16,
+                                                 face="bold.italic"))
 
-    ggplot2::ggsave(filename = "serotipo.png",
-           dpi = 200)
+    #ggplot2::ggsave(filename = "serotipo.png", dpi = 200)
     ##
     ##
-    serotype <- grid::rasterGrob(png::readPNG("serotipo.png"),
-                                 interpolate = T)
+    #serotype <- grid::rasterGrob(png::readPNG("serotipo.png"),interpolate = T)
     ##
-    ## add  to the plot the png
-    p
-    p + ggplot2::annotation_custom(serotype,
-                                   ymin = 5,
-                                   ymax = max(tapply(x_state$n, x_state$DES_EDO_RES2, sum)),
-                                   xmin = 1,
-                                   xmax = 25)
+    ## add  to the plot the
+    cowplot::ggdraw() +
+        cowplot::draw_plot(p, 0, 0, 1, 1) +
+        cowplot::draw_plot(ser,
+                           x = x_leg,
+                           y = y_leg,
+                           0.35, 0.35,
+                           scale = scale_serotype)
+
 }
