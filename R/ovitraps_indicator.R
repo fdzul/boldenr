@@ -20,7 +20,7 @@
 #' @seealso \link[boldenr]{epidemiological_channel} and \link[boldenr]{entomological_channel}
 #'
 #' @details xxxx
-ovitrampas_indicator <- function(x, nom_loc = NULL, all){
+ovitraps_indicator <- function(x, nom_loc = NULL, all){
 
     ##  Step 2. modify the values of the localidad variable
     x$Localidad <- ifelse(x$Localidad %in% c("Ampliación Las Bajadas",
