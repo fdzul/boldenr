@@ -1,7 +1,12 @@
 #' Plot the dengue cases by state and serotype
 #'
-#' @param dataset is the dataset of sinave http://vectores.sinave.gob.mx/.
+#' @param dataset is the dataset of sinave \link{http://vectores.sinave.gob.mx/}.
+#' @param year is the year of dataset.
+#' @param scale_serotype is the scale of the dengue serotype plot.
+#' @param x The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.
+#' @param y The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.
 #'
+#' @seealso \code{\link[cowplot]{drawplot}}.
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
 #' @return a plot of class ggplot.
@@ -11,8 +16,8 @@
 #' @import grid
 #'
 #' @examples 1+1
-plot_state_serotype <- function(dataset, year, scale_serotype, x_leg,
-                                y_leg){
+plot_state_serotype <- function(dataset, year, scale_serotype, x,
+                                y){
     y <- dataset
     x_state <- y %>%
         dplyr::filter(ANO == year &
@@ -103,8 +108,8 @@ plot_state_serotype <- function(dataset, year, scale_serotype, x_leg,
     cowplot::ggdraw() +
         cowplot::draw_plot(p, 0, 0, 1, 1) +
         cowplot::draw_plot(ser,
-                           x = x_leg,
-                           y = y_leg,
+                           x = x,
+                           y = y,
                            0.35, 0.35,
                            scale = scale_serotype)
 
