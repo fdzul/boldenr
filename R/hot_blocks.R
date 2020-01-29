@@ -75,7 +75,8 @@ hot_blocks <- function(loc, x, blocks, cve_mpo, sem1, risk){
 
     ## Step 2.3
     w <- y[y$Localidad == loc, ] %>%
-        tidyr::unnest(tab_sem, .drop = TRUE) %>%
+        dplyr::select(-data) %>%
+        tidyr::unnest(cols = c(tab_sem)) %>%
         dplyr::mutate(sec_manz = paste(Sector, Manzana, sep =""))
     w$Sector <- NULL;w$Manzana <- NULL; w$Localidad <- NULL
 
