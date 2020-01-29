@@ -16,8 +16,8 @@
 #' @import grid
 #'
 #' @examples 1+1
-plot_state_serotype <- function(dataset, year, scale_serotype, x,
-                                y){
+plot_state_serotype <- function(dataset, year, scale_serotype, x_serotype,
+                                y_serotype){
     y <- dataset
     x_state <- y %>%
         dplyr::filter(ANO == year &
@@ -108,8 +108,8 @@ plot_state_serotype <- function(dataset, year, scale_serotype, x,
     cowplot::ggdraw() +
         cowplot::draw_plot(p, 0, 0, 1, 1) +
         cowplot::draw_plot(ser,
-                           x = x,
-                           y = y,
+                           x = x_serotype,
+                           y = y_serotype,
                            0.35, 0.35,
                            scale = scale_serotype)
 
