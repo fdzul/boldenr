@@ -4,7 +4,7 @@
 \alias{plot_state_serotype}
 \title{Plot the dengue cases by state and serotype}
 \usage{
-plot_state_serotype(dataset, year, scale_serotype, x, y)
+plot_state_serotype(dataset, year, scale_serotype, x_serotype, y_serotype)
 }
 \arguments{
 \item{dataset}{is the dataset of sinave \link{http://vectores.sinave.gob.mx/}.}
