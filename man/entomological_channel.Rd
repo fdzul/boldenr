@@ -11,7 +11,7 @@ entomological_channel(x, z, y, mun1, nom_loc, x_title, sep_ticks)
 
 \item{z}{is the dataset of actual year of ovitraps.}
 
-\item{y}{is the catalogue of localities accord the \href{**INEGI**}{https://www.inegi.org.mx/default.html}..}
+\item{y}{is the catalogue of localities accord the \href{**INEGI**}{https://www.inegi.org.mx/default.html}.}
 
 \item{mun1}{is the name municipality.}
 
