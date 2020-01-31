@@ -7,7 +7,7 @@
 #' @param loc is the name of locality.
 #' @param week is TRUE or FALSE. TRUE indicate the vector control actions in the week, else FALSE indicate the cumulative vector control.
 #' @param num_loc is the id of locality according the \href{**INEGI**}{https://www.inegi.org.mx/default.html}.
-#' @param bloks is the sf object of blocks.
+#' @param blocks is the sf object of blocks.
 #'
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
