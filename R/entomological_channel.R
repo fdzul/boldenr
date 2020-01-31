@@ -5,7 +5,7 @@
 #'
 #' @param x is the dataset of historic ovitraps. For more information, see \url{http://kin.insp.mx/aplicaciones/SisMV}.
 #' @param z is the dataset of actual year of ovitraps.
-#' @param y is the catalogue of localities accord the \href{**INEGI**}{https://www.inegi.org.mx/default.html}..
+#' @param y is the catalogue of localities accord the \href{**INEGI**}{https://www.inegi.org.mx/default.html}.
 #' @param mun1 is the name municipality.
 #' @param nom_loc is the name of locality.
 #' @param x_title is the name of tittle of x.

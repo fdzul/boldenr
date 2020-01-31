@@ -1,7 +1,21 @@
-action_map <- function(data, mun, cve_mpo, loc, week, num_loc){
-
-    ##
-    load("~/Dropbox/1.Read_Automatic_dataset_platform/RData/Ine/ver_blocks.RData")
+#' Action Map
+#'
+#'This function generate the action map of vector control.
+#' @param data it is the database of vector actions.
+#' @param mun  is the name of municipality.
+#' @param cve_mpo is the id of municipality according the \href{**INEGI**}{https://www.inegi.org.mx/default.html}.
+#' @param loc is the name of locality.
+#' @param week is TRUE or FALSE. TRUE indicate the vector control actions in the week, else FALSE indicate the cumulative vector control.
+#' @param num_loc is the id of locality according the \href{**INEGI**}{https://www.inegi.org.mx/default.html}.
+#' @param bloks is the sf object of blocks.
+#'
+#' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
+#'
+#' @return
+#' @export
+#'
+#' @examples
+action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
     if(loc == "Rinconada") {
         z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in%
                                               cve_mpo & LOCALIDAD == 5 |
