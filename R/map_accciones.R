@@ -1,16 +1,16 @@
-map_acciones <- function(data, mun, cve_mpo, loc, week, num_loc){
-    
-    ## 
+action_map <- function(data, mun, cve_mpo, loc, week, num_loc){
+
+    ##
     load("~/Dropbox/1.Read_Automatic_dataset_platform/RData/Ine/ver_blocks.RData")
     if(loc == "Rinconada") {
-        z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in% 
+        z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in%
                                               cve_mpo & LOCALIDAD == 5 |
-                                              MUNICIPIO == 134 & 
+                                              MUNICIPIO == 134 &
                                               LOCALIDAD == 3) %>%
             dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
             dplyr::mutate(Municipio = rep(loc, times = n()))
     } else if(loc == "Veracruz"){
-        z <- ver_blocks %>% 
+        z <- ver_blocks %>%
             dplyr::filter(MUNICIPIO %in% cve_mpo, LOCALIDAD == 1) %>%
             dplyr::filter(!SECCION == 4228 &
                               !MANZANA %in% c(257, 275, 165,
@@ -22,17 +22,17 @@ map_acciones <- function(data, mun, cve_mpo, loc, week, num_loc){
                                               154)) %>%
             dplyr::filter(!SECCION %in% c(585, 267, 266)) %>%
             dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
-            dplyr::mutate(Municipio = ifelse(MUNICIPIO == 29, 
+            dplyr::mutate(Municipio = ifelse(MUNICIPIO == 29,
                                              "Boca del Río",
                                              "Veracruz"))
-        
+
     } else {
-        z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in% c(cve_mpo), 
+        z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in% c(cve_mpo),
                                           LOCALIDAD == num_loc) %>%
             dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
             dplyr::mutate(Municipio = rep(loc, times = dplyr::n()))
     }
-    
+
     ###
     x <- data %>%
         dplyr::filter(Municipio %in% c(mun)) %>%
@@ -57,7 +57,7 @@ map_acciones <- function(data, mun, cve_mpo, loc, week, num_loc){
                              by = c("sec_manz", "Municipio")) %>%
         dplyr::mutate(avance = rep("En la semana", times = n())) %>%
         dplyr::filter(!is.na(sector))
-    
+
     if(week == TRUE){
         zx <- z_y %>%
             dplyr::mutate("Criterio_Operativo" = ifelse(Cobertura.en.Manzana <= 50, "Deficiente",
@@ -69,7 +69,7 @@ map_acciones <- function(data, mun, cve_mpo, loc, week, num_loc){
         zx$Criterio_Operativo <- factor(zx$Criterio_Operativo,
                                         levels = c("Bueno", "Deficiente", "Óptimo","Regular")[c(3, 1,4, 2)])
         zx
-        
+
     } else {
         zx <- z_x %>%
             dplyr::mutate("Criterio_Operativo" = ifelse(Cobertura.en.Manzana <= 50, "Deficiente",
@@ -81,7 +81,7 @@ map_acciones <- function(data, mun, cve_mpo, loc, week, num_loc){
         zx$Criterio_Operativo <- factor(zx$Criterio_Operativo,
                                           levels = c("Bueno", "Deficiente", "Óptimo","Regular")[c(3, 1,4, 2)])
         zx
-    
+
     }
     tm_shape(z) +
         tm_fill(col = "gray85",
@@ -106,8 +106,8 @@ map_acciones <- function(data, mun, cve_mpo, loc, week, num_loc){
                     #palette = c("#00FF00", "red", "#0000FF", "orange"),
                     palette = c("#0000FF","#00FF00", "#FF9900", "#FF0033"),#"Reds",#colorRamps::matlab.like2(4), #"GnBu", #rev(viridisLite::viridis(10)), #colorRamps::matlab.like(10),#"Reds",#viridisLite::viridis(9), #"Reds", ##
                     legend.show = T)
-    
-    
-    
-    
+
+
+
+
 }
