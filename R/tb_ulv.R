@@ -1,11 +1,11 @@
-#' Tabla de nebulizacion
+#' Ultra Low Volumen (ULV) table.
 #'
-#' Esta función genera una tabla de nebulizacio fria o termica.
+#' This function generate of thermal o cold ULV table.
 #'
-#' @param x es la base de datos de nebulizacion de vectores.
-#' @param jur es el nombre de la jurisdiccion.
+#' @param x is the ULV datasets.
+#' @param jur is the name of jurisdiction.
 #' @param mun es valor logico TRUE o FALSE para indicar si la tabla es por jurisdiccion y municipia o por por estado y jurisdiccion, respectivamente.
-#' @param coldfog es un valor logicico TRUE o FALSE para indicar si es nebulizacion en frio (cold fog) o nubulizacion termica (termal fog.
+#' @param coldfog is logical value TRUE or FALSE to indicate if the table is by jurisdiction and municipality or by state and jurisdiction, respectively
 #'
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
@@ -13,7 +13,6 @@
 #'
 #' @export
 #'
-#' @import dplyr
 #'
 #' @examples 1+1
 tb_ulv <- function(x, jur = NULL, mun, coldfog){
