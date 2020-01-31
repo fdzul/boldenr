@@ -23,35 +23,30 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
         ## Step 1. Make the list files
         l <- list.files(path, full.names = TRUE, pattern = "txt")
         ## Step 2. Make the function
-        unzip_list <- function(x){
-            y <- data.table::fread(x, header = TRUE, quote = "",
+        read_dat <- function(x){
+            vect_cols <- c("IDE_EDA_ANO", "IDE_SEX",
+                           "IDE_CAL", "NUM_EXT", "NUM_INT",
+                           "IDE_COL", "IDE_CP",
+                           "CVE_LOC_RES", "DES_LOC_RES", "CVE_MPO_RES", "DES_MPO_RES",
+                           "DES_JUR_RES", "CVE_EDO_RES", "DES_EDO_RES",
+                           "ESTATUS_CASO", "CVE_DIAG_PROBABLE", "DES_DIAG_PROBABLE", "DES_DIAG_FINAL",
+                           "FEC_INI_SIGNOS_SINT", "ANO", "SEM",
+                           "RESULTADO_NS1", "RESULTADO_IGM", "RESULTADO_IGG",
+                           "RESULTADO_PCR", "RESULTADO_IGMC", "RESULTADO_MAC",
+                           "MANEJO",
+                           "DES_INS_UNIDAD", "DENGUE_SER_TRIPLEX","FEC_INGRESO")
+
+            y <- data.table::fread(x,
+                                   header = TRUE,
+                                   quote = "",
+                                   select = vect_cols,
                                    fill=TRUE,
                                    encoding = "Latin-1")
-            #y <- readr::read_delim(x)
-            y <- dplyr::select(y,
-                               CVE_EDO_RES,
-                               DES_EDO_RES,
-                               CVE_JUR_RES, DES_JUR_RES,
-                               CVE_MPO_RES, DES_MPO_RES,
-                               CVE_LOC_RES, DES_LOC_RES,
-                               IDE_SEX, IDE_EDA_ANO,
-                               ESTATUS_CASO, DES_DIAG_PROBABLE,
-                               DES_DIAG_FINAL, ANO, SEM, DES_INS_UNIDAD,
-                               DENGUE_SER_TRIPLEX,
-                               FEC_INGRESO)
         }
         ## Step 3. apply the function for each file and row bind
         #y <- data.table::fread(l[[1]], header = TRUE, quote="")
-        x <- purrr::map_dfr(purrr::map(l, unzip_list), rbind)
+        x <- purrr::map_dfr(purrr::map(l, read_dat), rbind)
 
-        ## Step 4. correct the acentos and ñ
-        x$DES_JUR_RES <- stringr::str_replace(x$DES_JUR_RES, pattern = "<d1>",replacement = "N")
-        x$DES_LOC_RES <- stringr::str_replace(x$DES_LOC_RES, pattern = "<c1>",replacement = "A")
-        x$DES_LOC_RES <- stringr::str_replace(x$DES_LOC_RES, pattern = "<d9>",replacement = "E")
-        x$DES_LOC_RES <- stringr::str_replace(x$DES_LOC_RES, pattern = "<cd>",replacement = "I")
-        x$DES_LOC_RES <- stringr::str_replace(x$DES_LOC_RES, pattern = "<d3>",replacement = "O")
-        x$DES_LOC_RES <- stringr::str_replace(x$DES_LOC_RES, pattern = "<da>",replacement = "U")
-        x
     } else if ("Lecturas" == inf) {
         l_files <- purrr::map(list.dirs(path = path,
                                         full.names = TRUE),
