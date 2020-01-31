@@ -19,7 +19,7 @@ action_map(data, mun, cve_mpo, loc, week, num_loc, blocks)
 
 \item{num_loc}{is the id of locality according the \href{**INEGI**}{https://www.inegi.org.mx/default.html}.}
 
-\item{bloks}{is the sf object of blocks.}
+\item{blocks}{is the sf object of blocks.}
 }
 \description{
 This function generate the action map of vector control.
