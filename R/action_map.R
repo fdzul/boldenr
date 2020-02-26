@@ -22,7 +22,7 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
                                               MUNICIPIO == 134 &
                                               LOCALIDAD == 3) %>%
             dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
-            dplyr::mutate(Municipio = rep(loc, times = n()))
+            dplyr::mutate(Municipio = rep(loc, times = dplyr::n()))
     } else if(loc == "Veracruz"){
         z <- ver_blocks %>%
             dplyr::filter(MUNICIPIO %in% cve_mpo, LOCALIDAD == 1) %>%
@@ -69,7 +69,7 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
     z_y <-  dplyr::left_join(x = z[, c(-9,-10, -11,-12)],
                              y = y,
                              by = c("sec_manz", "Municipio")) %>%
-        dplyr::mutate(avance = rep("En la semana", times = n())) %>%
+        dplyr::mutate(avance = rep("En la semana", times = dplyr::n())) %>%
         dplyr::filter(!is.na(sector))
 
     if(week == TRUE){
@@ -97,13 +97,13 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
         zx
 
     }
-    tm_shape(z) +
-        tm_fill(col = "gray85",
+    tmap::tm_shape(z) +
+        tmap::tm_fill(col = "gray85",
                 lwd = 0.1,
                 border.col = "white") +
-        tm_layout(frame = F) +
-        tm_shape(zx) +
-        tm_polygons(col = "Criterio_Operativo",
+        tmap::tm_layout(frame = F) +
+        tmap::tm_shape(zx) +
+        tmap::tm_polygons(col = "Criterio_Operativo",
                     title = "",   ## cambia la etiqueta de la leyenda
                     border.col =  "white",
                     lwd = 0.1,
