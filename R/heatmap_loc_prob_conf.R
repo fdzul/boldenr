@@ -11,7 +11,7 @@
 #' @param rlabeltextsize is the row text label size.
 #' @param clabeltextsize is the column text label size.
 #' @param heatmap_color is character specifying the heatmap colour scheme.
-#' @param nloc is the number of localities.
+#' @param n_loc is the number of localities.
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
 #' @return a heatmap confirmed or probables cases by localities.

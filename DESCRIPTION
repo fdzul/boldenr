@@ -1,6 +1,6 @@
 Package: boldenr
 Type: Package
-Title: boldenr: a package designed to generate of Dengue Bulletin of Veracruz state.
+Title: boldenr: a package designed to generate of Dengue Bulletin of Veracruz state
 Version: 0.1.0
 Author: Felipe Antonio Dzul Manzanilla
 Maintainer: The package maintainer <felipe.dzul.m@gmail.com>

@@ -11,7 +11,7 @@
 #' @param rlabeltextsize is the row text label size.
 #' @param clabeltextsize is the column text label size.
 #' @param heatmap_color is character specifying the heatmap colour scheme.
-#' @prob is the status, 1 is probable, 2 positive casesa and 3 is negative cases.
+#' @param prob is the status, 1 is probable, 2 positive casesa and 3 is negative cases.
 #'
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
