@@ -1,4 +1,4 @@
-#' Graph the epidemiological channel.
+#' Graph the epidemiological channel
 #'
 #' This function has been designed to generate the
 #' epidemiological channel of dengue cases.
@@ -11,6 +11,8 @@
 #' @param z is the current epidemiological dataset.
 #' @param juris is a logical parameter for graph when the state is FALSE. if juris is FALSE the graph is the municipality
 #' @param jurisdiccion is the name of jurisdiction. is null in the level municipality
+#' @param year1 is the previous year of the current year.
+#' @param year2 is the current year
 #'
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'

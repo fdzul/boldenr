@@ -4,7 +4,14 @@
 #' @param probable is the arguments for define the confirmed or probables cases. If probable is true the heatmap is the probables, else the heatmap is the confirmed cases.
 #' @param year is the current year. Is a numeric.
 #' @param state is the state.
-#'
+#' @param rtitlesize is the row title size.
+#' @param mtextsize is the matrix text size.
+#' @param rlabelsize is the row label size.
+#' @param clabelsize is the column label size.
+#' @param rlabeltextsize is the row text label size.
+#' @param clabeltextsize is the column text label size.
+#' @param heatmap_color is character specifying the heatmap colour scheme.
+#' @param nloc is the number of localities.
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
 #' @return a heatmap confirmed or probables cases by localities.
@@ -17,6 +24,7 @@
 #' @references xxxxx
 #'
 #' @seealso \link[boldenr]{epidemiological_channel}
+#' @seealso \link[superhead]{superheat}
 #'
 #' @details the heatmap is based in the package superheat and the function \link[superheat]{superheat}
 heatmap_loc_prob_conf <- function(x, probable,

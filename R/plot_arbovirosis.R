@@ -2,7 +2,8 @@
 #'
 #' @param x is the dataset of probable and confirmed cases of arbovirosis.
 #' @param state is the state target. its length is 1 o more.
-#'
+#' @param year1 is the previous year of the current year.
+#' @param year2 is the current year
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
 #' @return a plot the probables and confirmed cases of arbovirosis (DENV, CHIKV, ZIKV) of years 2018 and 2019 in Veracruz State. The lines and areas represent the cases of 2019 and 2018, respectively.

@@ -3,8 +3,8 @@
 #' @param dataset is the dataset of sinave \link{http://vectores.sinave.gob.mx/}.
 #' @param year is the year of dataset.
 #' @param scale_serotype is the scale of the dengue serotype plot.
-#' @param x The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.
-#' @param y The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.
+#' @param x_serotype The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.
+#' @param y_serotype The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.
 #'
 #' @seealso \code{\link[cowplot]{drawplot}}.
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}

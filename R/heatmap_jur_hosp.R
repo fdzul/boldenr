@@ -33,8 +33,7 @@ heatmap_jur_hosp <- function(x, state, year,
                              clabelsize,
                              rlabeltextsize,
                              clabeltextsize,
-                             heatmap_color,
-                             r_ticks){
+                             heatmap_color){
     x$FEC_INGRESO <- lubridate::ymd(x$FEC_INGRESO)
     x <- x %>%
         dplyr::filter(ESTATUS_CASO == 2 &

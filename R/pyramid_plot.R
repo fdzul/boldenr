@@ -3,7 +3,6 @@
 #' @param x is the epidemiological dataset.
 #' @param by_juris is the parameter for define the pyramid plot. if by_juris is false the plot is the state, else the plot is by jurisdiction.
 #' @param state is the parameter for select the state.
-#' @param label is the parameter of define the size of label.
 #' @param year is the current year.
 #' @param pal is the color of palette.
 #'
