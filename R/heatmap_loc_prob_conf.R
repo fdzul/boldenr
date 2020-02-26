@@ -19,7 +19,6 @@
 #'
 #'
 #'
-#' @examples
 #'
 #' @references xxxxx
 #'
