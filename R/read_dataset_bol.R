@@ -45,7 +45,7 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
         }
         ## Step 3. apply the function for each file and row bind
         #y <- data.table::fread(l[[1]], header = TRUE, quote="")
-        x <- purrr::map_dfr(purrr::map(l, read_dat), rbind)
+        x <- purrr::map(purrr::map(l, read_dat), rbind)
 
     } else if ("Lecturas" == inf) {
         l_files <- purrr::map(list.dirs(path = path,
