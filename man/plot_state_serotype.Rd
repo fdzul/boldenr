@@ -13,9 +13,9 @@ plot_state_serotype(dataset, year, scale_serotype, x_serotype, y_serotype)
 
 \item{scale_serotype}{is the scale of the dengue serotype plot.}
 
-\item{x}{The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.}
+\item{x_serotype}{The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.}
 
-\item{y}{The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.}
+\item{y_serotype}{The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.}
 }
 \value{
 a plot of class ggplot.

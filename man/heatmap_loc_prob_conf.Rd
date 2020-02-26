@@ -16,6 +16,22 @@ heatmap_loc_prob_conf(x, probable, year, state, rtitlesize, mtextsize,
 \item{year}{is the current year. Is a numeric.}
 
 \item{state}{is the state.}
+
+\item{rtitlesize}{is the row title size.}
+
+\item{mtextsize}{is the matrix text size.}
+
+\item{rlabelsize}{is the row label size.}
+
+\item{clabelsize}{is the column label size.}
+
+\item{rlabeltextsize}{is the row text label size.}
+
+\item{clabeltextsize}{is the column text label size.}
+
+\item{heatmap_color}{is character specifying the heatmap colour scheme.}
+
+\item{nloc}{is the number of localities.}
 }
 \value{
 a heatmap confirmed or probables cases by localities.
@@ -34,6 +50,8 @@ xxxxx
 }
 \seealso{
 \link[boldenr]{epidemiological_channel}
+
+\link[superhead]{superheat}
 }
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}

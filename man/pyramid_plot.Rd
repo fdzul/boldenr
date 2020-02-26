@@ -16,8 +16,6 @@ pyramid_plot(x, by_juris, state, year, pal)
 \item{year}{is the current year.}
 
 \item{pal}{is the color of palette.}
-
-\item{label}{is the parameter of define the size of label.}
 }
 \value{
 a pyramid plot of class ggplot.

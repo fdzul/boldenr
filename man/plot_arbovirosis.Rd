@@ -10,6 +10,10 @@ plot_arbovirosis(x, state, year1, year2)
 \item{x}{is the dataset of probable and confirmed cases of arbovirosis.}
 
 \item{state}{is the state target. its length is 1 o more.}
+
+\item{year1}{is the previous year of the current year.}
+
+\item{year2}{is the current year}
 }
 \value{
 a plot the probables and confirmed cases of arbovirosis (DENV, CHIKV, ZIKV) of years 2018 and 2019 in Veracruz State. The lines and areas represent the cases of 2019 and 2018, respectively.

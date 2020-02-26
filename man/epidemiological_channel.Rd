@@ -2,7 +2,7 @@
 % Please edit documentation in R/epidemiological_channel.R
 \name{epidemiological_channel}
 \alias{epidemiological_channel}
-\title{Graph the epidemiological channel.}
+\title{Graph the epidemiological channel}
 \usage{
 epidemiological_channel(x, edo, mun = NULL, state, scale_case, z, juris,
   jurisdiccion = NULL, year1, year2)
@@ -23,6 +23,10 @@ epidemiological_channel(x, edo, mun = NULL, state, scale_case, z, juris,
 \item{juris}{is a logical parameter for graph when the state is FALSE. if juris is FALSE the graph is the municipality}
 
 \item{jurisdiccion}{is the name of jurisdiction. is null in the level municipality}
+
+\item{year1}{is the previous year of the current year.}
+
+\item{year2}{is the current year}
 }
 \value{
 a graph of class ggplot.
