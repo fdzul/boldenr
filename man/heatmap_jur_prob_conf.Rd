@@ -16,6 +16,8 @@ heatmap_jur_prob_conf(x, state, years, clus, prob, rtitlesize, mtextsize,
 
 \item{clus}{is parameter for define the numbers of clusters.}
 
+\item{prob}{is the status, 1 is probable, 2 positive casesa and 3 is negative cases.}
+
 \item{rtitlesize}{is the row title size.}
 
 \item{mtextsize}{is the matrix text size.}

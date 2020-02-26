@@ -31,7 +31,7 @@ heatmap_loc_prob_conf(x, probable, year, state, rtitlesize, mtextsize,
 
 \item{heatmap_color}{is character specifying the heatmap colour scheme.}
 
-\item{nloc}{is the number of localities.}
+\item{n_loc}{is the number of localities.}
 }
 \value{
 a heatmap confirmed or probables cases by localities.
