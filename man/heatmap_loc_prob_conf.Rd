@@ -42,9 +42,6 @@ Generate of heatmap of confirmed or probables cases by localities.
 \details{
 the heatmap is based in the package superheat and the function \link[superheat]{superheat}
 }
-\examples{
-
-}
 \references{
 xxxxx
 }
