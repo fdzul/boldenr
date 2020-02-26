@@ -36,16 +36,21 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                            "MANEJO",
                            "DES_INS_UNIDAD", "DENGUE_SER_TRIPLEX","FEC_INGRESO")
 
-            y <- data.table::fread(x,
-                                   header = TRUE,
-                                   quote = "",
-                                   select = vect_cols,
-                                   fill=TRUE,
-                                   encoding = "Latin-1")
+            data.table::fread(x,
+                              header = TRUE,
+                              quote = "",
+                              select = vect_cols,
+                              fill = TRUE,
+                              encoding = "Latin-1")
         }
         ## Step 3. apply the function for each file and row bind
-        #y <- data.table::fread(l[[1]], header = TRUE, quote="")
-        x <- purrr::map(purrr::map(l, read_dat), rbind)
+        # x <- purrr::map(purrr::map(l, read_dat), rbind)
+        rbind(purrr::map_dfr(l[[1]], read_dat),
+              purrr::map_dfr(l[[2]], read_dat),
+              purrr::map_dfr(l[[3]], read_dat),
+              purrr::map_dfr(l[[4]], read_dat),
+              purrr::map_dfr(l[[5]], read_dat),
+              purrr::map_dfr(l[[6]], read_dat))
 
     } else if ("Lecturas" == inf) {
         l_files <- purrr::map(list.dirs(path = path,
