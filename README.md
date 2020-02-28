@@ -22,7 +22,7 @@
   _ **`plot_state_serotype()`**  definition?. 
   - **`pyramid_plot()`**  definition?. 
   - **`read_dataset_bol()`**  definition?. 
-  - **`risk_percentil()`**  definition?. 
+  _ **`risk_percentil()`**  definition?. 
   _ **`tb_cl()`**  definition?. 
   _ **`tb_conf()`**  definition?. 
   _ **`tb_ulv()`**  definition?. 
