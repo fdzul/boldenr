@@ -14,7 +14,8 @@
   - **`epidemiological_channel()`**definition?.
   - **`heatmap_jur_hosp()`**definition?.
   - **`heatmap_jur_prob_conf()`**definition?. 
-  - **`heatmap_loc_prob_conf()`**definition?. 
+  - **`heatmap_loc_prob_conf()`**definition?.
+  - **`hot_blocks()`**definition?.
   _ **`hot_blocks()`**definition?. 
   _ **`map_conf_state()`**definition?. 
   _ **`ovitraps_indicator()`**definition?.
