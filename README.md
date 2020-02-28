@@ -17,7 +17,7 @@
   - **`heatmap_loc_prob_conf()`**  definition?. 
   _ **`hot_blocks()`**  definition?. 
   _ **`map_conf_state()`**  definition?. 
-  _ **`ovitraps_indicator()`**  definition?. 
+  _ **`ovitraps_indicator()`**  definition?.
   - **`plot_arbovirosis()`**  definition?. 
   _ **`plot_state_serotype()`**  definition?. 
   - **`pyramid_plot()`**  definition?. 
@@ -49,7 +49,10 @@ devtools::install_github("fdzul/boldenr")
 
 ## Authors
 
-* **Felipe Antonio Dzul Manzanilla** -**https://github.com/fdzul** - Packages developed in github: 1) [denhotspots](https://github.com/fdzul/denhotspots), 2) [deneggs](https://github.com/fdzul/deneggs),y 3)[dendata](https://github.com/fdzul/dendata)
+* **Felipe Antonio Dzul Manzanilla** -**https://github.com/fdzul** - Packages developed in github: 
+- 1) [denhotspots](https://github.com/fdzul/denhotspots). 
+- 2) [deneggs](https://github.com/fdzul/deneggs). 
+- 3)[dendata](https://github.com/fdzul/dendata).
 
 * **Fabian Correa Morales**
 * **Luis Hernández Herrera**
