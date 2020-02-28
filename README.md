@@ -1,24 +1,38 @@
-# **deneggs**
+# **boldenr**
 
 [![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
 
-*deneggs is a package It is a package developed in the department of prevention and control of diseases transmitted by vector of the Secretary of Health of Veracruz [Secretary of Health of Veracruz](https://www.ssaver.gob.mx/) and with Authorization of the federal level. (#usage).*
+* boldenr is a package developed in the department of prevention and control of diseases transmitted by vector of the Secretary of Health of Veracruz [Secretary of Health of Veracruz](https://www.ssaver.gob.mx/) and with colaboration of the federal level.*
 
 
 ## **overview**
 
-**deneggs** is a package to generate predictive maps of the number of eggs or adults in areas where it is not collected.The predictive maps are generated using geostatistical analysis in the [INLA](http://www.r-inla.org/) framework. 
+**deneggs** boldenr: a package designed to generate of Dengue Bulletin of Veracruz state and inclued the nest function 
 
-  - `**spde_pred_map**()` generate the predictive map.
-  - `eggs_map()` generates an entomological risk map or an egg density map.
-  - `loc_grid_points()` It is a complementary function that helps in the creation of grid of the locality in the prediction stack in [INLA](http://www.r-inla.org/).
-  - `mesh()` It is a complementary function that helps in the creation of mesh.
-
+  - **`action_map**()`** definition?.
+  - **`entomological_channel()`** definition?.
+  - **`epidemiological_channel()`** definition?.
+  - **`heatmap_jur_hosp()`**  definition?.
+  - **`heatmap_jur_prob_conf()`**  definition?. 
+  - **`heatmap_loc_prob_conf()`**  definition?. 
+  _ **`hot_blocks()`**  definition?. 
+  _ **`map_conf_state()`**  definition?. 
+  _ **`ovitraps_indicator()`**  definition?. 
+  - **`plot_arbovirosis()`**  definition?. 
+  _ **`plot_state_serotype()`**  definition?. 
+  - **`pyramid_plot()`**  definition?. 
+  - **`read_dataset_bol()`**  definition?. 
+  - **`risk_percentil()`**  definition?. 
+  _ **`tb_cl()`**  definition?. 
+  _ **`tb_conf()`**  definition?. 
+  _ **`tb_ulv()`**  definition?. 
+  
+  
 ## Instalation
 
 ``` r
 # The easiest way to get dplyr is to install the whole tidyverse:
-install.packages("deneggs")
+install.packages("boldenr")
 ```
 
 ### Development version
@@ -28,14 +42,14 @@ install deneggs from GitHub.
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("fdzul/deneggs")
+devtools::install_github("fdzul/boldenr")
 ``` 
 
 ## Usage
 
 ## Authors
 
-* **Felipe Antonio Dzul Manzanilla** -**https://github.com/fdzul** - Packages developed in github: 1) [denhotspots](https://github.com/fdzul/denhotspots), 2) [boldenr](https://github.com/fdzul/boldenr),y 3)[dendata](https://github.com/fdzul/dendata)
+* **Felipe Antonio Dzul Manzanilla** -**https://github.com/fdzul** - Packages developed in github: 1) [denhotspots](https://github.com/fdzul/denhotspots), 2) [deneggs](https://github.com/fdzul/deneggs),y 3)[dendata](https://github.com/fdzul/dendata)
 
 * **Fabian Correa Morales**
 * **Luis Hernández Herrera**
