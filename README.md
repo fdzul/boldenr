@@ -49,9 +49,9 @@ devtools::install_github("fdzul/boldenr")
 ## Authors
 
 * **Felipe Antonio Dzul Manzanilla** -**https://github.com/fdzul** - Packages developed in github: 
-- 1) [denhotspots](https://github.com/fdzul/denhotspots). 
-- 2) [deneggs](https://github.com/fdzul/deneggs). 
-- 3) [dendata](https://github.com/fdzul/dendata).
+  1) [denhotspots](https://github.com/fdzul/denhotspots). 
+  2) [deneggs](https://github.com/fdzul/deneggs). 
+  3) [dendata](https://github.com/fdzul/dendata).
 
 * **Fabian Correa Morales**
 * **Luis Hernández Herrera**
