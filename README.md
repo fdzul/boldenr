@@ -9,24 +9,23 @@
 
 **deneggs** boldenr: a package designed to generate of Dengue Bulletin of Veracruz state and inclued the nest function 
 
-  - **`action_map()`**definition?.
-  - **`entomological_channel()`**definition?.
-  - **`epidemiological_channel()`**definition?.
-  - **`heatmap_jur_hosp()`**definition?.
-  - **`heatmap_jur_prob_conf()`**definition?. 
-  - **`heatmap_loc_prob_conf()`**definition?.
-  - **`hot_blocks()`**definition?.
-  - **`map_conf_state()`**definition?.
-  - **`ovitraps_indicator()`**definition?.
-  - **`plot_arbovirosis()`**definition?.
-  - **`plot_state_serotype()`**definition?.
-  - **`pyramid_plot()`**definition?.
-  - **`read_dataset_bol()`**definition?.
-  - **`risk_percentil()`**definition?.
-  - **`tb_cl()`**definition?.
-  _ **`tb_conf()`**  definition?. 
-  _ **`tb_ulv()`**  definition?. 
-  
+  - **`action_map()`** definition?.
+  - **`entomological_channel()`** definition?.
+  - **`epidemiological_channel()`** definition?.
+  - **`heatmap_jur_hosp()`** definition?.
+  - **`heatmap_jur_prob_conf()`** definition?. 
+  - **`heatmap_loc_prob_conf()`** definition?.
+  - **`hot_blocks()`** definition?.
+  - **`map_conf_state()`** definition?.
+  - **`ovitraps_indicator()`** definition?.
+  - **`plot_arbovirosis()`** definition?.
+  - **`plot_state_serotype()`** definition?.
+  - **`pyramid_plot()`** definition?.
+  - **`read_dataset_bol()`** definition?.
+  - **`risk_percentil()`** definition?.
+  - **`tb_cl()`** definition?.
+  - **`tb_conf()`** definition?.
+  - **`tb_ulv()`** definition?.
   
 ## Instalation
 
