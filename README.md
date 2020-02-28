@@ -16,15 +16,14 @@
   - **`heatmap_jur_prob_conf()`**definition?. 
   - **`heatmap_loc_prob_conf()`**definition?.
   - **`hot_blocks()`**definition?.
-  _ **`hot_blocks()`**definition?. 
-  _ **`map_conf_state()`**definition?. 
-  _ **`ovitraps_indicator()`**definition?.
-  - **`plot_arbovirosis()`**definition?. 
-  _ **`plot_state_serotype()`**definition?. 
-  - **`pyramid_plot()`**definition?. 
-  - **`read_dataset_bol()`**definition?. 
-  _ **`risk_percentil()`**definition?. 
-  _ **`tb_cl()`**  definition?. 
+  - **`map_conf_state()`**definition?.
+  - **`ovitraps_indicator()`**definition?.
+  - **`plot_arbovirosis()`**definition?.
+  - **`plot_state_serotype()`**definition?.
+  - **`pyramid_plot()`**definition?.
+  - **`read_dataset_bol()`**definition?.
+  - **`risk_percentil()`**definition?.
+  - **`tb_cl()`**definition?.
   _ **`tb_conf()`**  definition?. 
   _ **`tb_ulv()`**  definition?. 
   
