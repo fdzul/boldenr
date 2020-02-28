@@ -9,20 +9,20 @@
 
 **deneggs** boldenr: a package designed to generate of Dengue Bulletin of Veracruz state and inclued the nest function 
 
-  - **`action_map**()`** definition?.
-  - **`entomological_channel()`** definition?.
-  - **`epidemiological_channel()`** definition?.
-  - **`heatmap_jur_hosp()`**  definition?.
-  - **`heatmap_jur_prob_conf()`**  definition?. 
-  - **`heatmap_loc_prob_conf()`**  definition?. 
-  _ **`hot_blocks()`**  definition?. 
-  _ **`map_conf_state()`**  definition?. 
-  _ **`ovitraps_indicator()`**  definition?.
-  - **`plot_arbovirosis()`**  definition?. 
-  _ **`plot_state_serotype()`**  definition?. 
-  - **`pyramid_plot()`**  definition?. 
-  - **`read_dataset_bol()`**  definition?. 
-  _ **`risk_percentil()`**  definition?. 
+  - **`action_map()`**definition?.
+  - **`entomological_channel()`**definition?.
+  - **`epidemiological_channel()`**definition?.
+  - **`heatmap_jur_hosp()`**definition?.
+  - **`heatmap_jur_prob_conf()`**definition?. 
+  - **`heatmap_loc_prob_conf()`**definition?. 
+  _ **`hot_blocks()`**definition?. 
+  _ **`map_conf_state()`**definition?. 
+  _ **`ovitraps_indicator()`**definition?.
+  - **`plot_arbovirosis()`**definition?. 
+  _ **`plot_state_serotype()`**definition?. 
+  - **`pyramid_plot()`**definition?. 
+  - **`read_dataset_bol()`**definition?. 
+  _ **`risk_percentil()`**definition?. 
   _ **`tb_cl()`**  definition?. 
   _ **`tb_conf()`**  definition?. 
   _ **`tb_ulv()`**  definition?. 
@@ -52,7 +52,7 @@ devtools::install_github("fdzul/boldenr")
 * **Felipe Antonio Dzul Manzanilla** -**https://github.com/fdzul** - Packages developed in github: 
 - 1) [denhotspots](https://github.com/fdzul/denhotspots). 
 - 2) [deneggs](https://github.com/fdzul/deneggs). 
-- 3)[dendata](https://github.com/fdzul/dendata).
+- 3) [dendata](https://github.com/fdzul/dendata).
 
 * **Fabian Correa Morales**
 * **Luis Hernández Herrera**
