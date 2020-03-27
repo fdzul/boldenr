@@ -7,7 +7,7 @@
 
 ### **overview**
 
-**deneggs** boldenr: a package designed to generate of Dengue Bulletin of Veracruz state and inclued the nest function 
+**boldenr**: a package designed to generate of Dengue Bulletin of Veracruz state and inclued the nest function 
 
   - **`action_map()`** definition?.
   - **`entomological_channel()`** definition?.
