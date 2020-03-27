@@ -30,14 +30,14 @@
 ## Instalation
 
 ``` r
-# The easiest way to get dplyr is to install the whole tidyverse:
+# The easiest way to get **boldenr** is to install:
 install.packages("boldenr")
 ```
 
 ### Development version
 
 To get a bug fix, or use a feature from the development version, you can
-install deneggs from GitHub.
+install **boldenr** from GitHub.
 
 ``` r
 # install.packages("devtools")
