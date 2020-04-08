@@ -104,7 +104,7 @@ hot_blocks <- function(loc, x, blocks, cve_mpo, sem1, risk){
     z_hot <-  dplyr::left_join(x = z[, c(-9,-10, -11,-12)],
                                   y = w,
                                   by = c("sec_manz"))
-    colnames(z_hot)[10] <- "huevos"
+    colnames(z_hot)[11] <- "huevos"
     z_hot <- z_hot %>% dplyr::filter(!is.na(huevos))
     #z_hot <- risk_percentil(x = z_hot, var = "huevos", en = FALSE)
     cuts <- stats::quantile(z_hot$huevos,
