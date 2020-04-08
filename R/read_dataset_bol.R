@@ -67,6 +67,7 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
             tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
+        x$Huevecillos <- as.numeric(x$Huevecillos)
         x
     } else if ("Control" == inf) {
         l_files <- purrr::map(list.dirs(path = path,
