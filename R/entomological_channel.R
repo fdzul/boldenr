@@ -123,8 +123,7 @@ entomological_channel <- function(x, z, y, mun1, nom_loc, x_title, sep_ticks){
     ## porcentaje de ovitrampas positivas..
     z$Localidad <- factor(z$Localidad)
 
-    z <- z %>% dplyr::filter(Localidad == nom_loc) %>%
-        dplyr::mutate(Semana.Epidemiologica = as.numeric(Semana.Epidemiologica))
+    z <- z %>% dplyr::filter(Localidad == nom_loc)
 
     ####
     ggplot(data = x) +
