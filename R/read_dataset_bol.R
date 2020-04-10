@@ -69,6 +69,8 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
         x$Huevecillos <- as.numeric(x$Huevecillos)
         x$Semana.Epidemiologica <- as.numeric(x$Semana.Epidemiologica)
+        x$Sector <- as.numeric(x$Sector)
+        x$Manzana <- as.numeric(x$Manzana)
         x
     } else if ("Control" == inf) {
         l_files <- purrr::map(list.dirs(path = path,
