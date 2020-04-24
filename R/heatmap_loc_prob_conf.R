@@ -44,16 +44,6 @@ heatmap_loc_prob_conf <- function(x, probable,
     fun_replace <- function(x, replace, pat){
         stringr::str_replace(x$DES_LOC_RES, pattern = pat,replacement = replace)}
 
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "MINATITL�N", replace = "MINATITLAN")
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "ANDR�S", replace = "ANDRES")
-
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "ENR�QUEZ", replace = "ENRIQUEZ")
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "RODR�GUEZ", replace = "RODRIGUEZ")
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "P�NUCO", replace = "PANUCO")
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "R�O", replace = "RIO")
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "IXTACZOQUITL�N", replace = "IXTACZOQUITLAN")
-    x$DES_LOC_RES <- fun_replace(x = x, pat = "T�XPAM",replace = "TUXPAN")
-
     ## subset the probables and confirmates
     subset_prob_conf <- function(x, status){
        y <- x %>%
