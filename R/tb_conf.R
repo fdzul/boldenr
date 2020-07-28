@@ -80,7 +80,7 @@ tb_conf <- function(x, inst, year, state){
                                                     "DENGUE NO GRAVE",
                                                     "DENGUE GRAVE")) %>%
             dplyr::group_by(age_class, IDE_SEX) %>%
-            dplyr::summarise(count = n()) %>%
+            dplyr::summarise(count = dplyr::n()) %>%
             tidyr::spread(key = "IDE_SEX", value = "count", fill = 0)
 
         names(y)<- c("Edad", "Masculino", "Femenino")
