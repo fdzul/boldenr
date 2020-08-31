@@ -107,13 +107,13 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
                           y = Porcentaje/0.25),
                       vjust = 1.3,
                       nudge_y = -0.1) +
+            theme_linedraw() +
             scale_y_continuous(sec.axis = sec_axis(~.*0.25,
                                                    name = "Porcentaje de Ovitrampas Positivas (Barras)")) +
             theme(axis.title.y = element_text(color = "darkred",
                                               size=13),
                   axis.title.y.right = element_text(color = "gray50",
                                                     size=13)) +
-            theme_linedraw() +
             ylab("Numero Promedio de Ovitrampas (Líneas)") +
             xlab("Semanas Epidemiologicas")
     } else {
