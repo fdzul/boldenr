@@ -112,7 +112,7 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
             theme(axis.title.y = element_text(color = "darkred",
                                               size=13),
                   axis.title.y.right = element_text(color = "gray50",
-                                                    size=13))
+                                                    size=13)) +
             theme_linedraw() +
             ylab("Numero Promedio de Ovitrampas (Líneas)") +
             xlab("Semanas Epidemiologicas")
