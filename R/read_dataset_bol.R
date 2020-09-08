@@ -100,7 +100,13 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                             allowEscapes = TRUE,
                             header = TRUE,
                             skipNul = TRUE,
-                            fileEncoding = "UCS-2LE") %>%
+                            fileEncoding = "UCS-2LE",
+                            colClasses = c(rep("character", 10),
+                                           "integer", "integer","character",
+                                           rep("integer", 3),
+                                           "character", "character",
+                                           rep("integer", 7),
+                                           rep("character", 4), "NULL", "NULL")) %>%
             tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
             tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
