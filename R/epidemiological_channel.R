@@ -79,8 +79,8 @@ epidemiological_channel <- function(x, edo, mun = NULL, state, scale_case, z,
             dplyr::group_by(SEM) %>%
             tidyr::nest() %>%
             dplyr::mutate(risk = purrr::map(data, percentil)) %>%
-            tidyr::unnest(risk, .drop =TRUE)
-        x$data <- NULL
+            dplyr::select(-data) %>%
+            tidyr::unnest(cols = c(risk))
         x <- as.data.frame(x)
         x <- dplyr::distinct(x,
                              SEM = x$SEM,
@@ -110,8 +110,8 @@ epidemiological_channel <- function(x, edo, mun = NULL, state, scale_case, z,
             dplyr::group_by(SEM) %>%
             tidyr::nest() %>%
             dplyr::mutate(risk = purrr::map(data, percentil)) %>%
-            tidyr::unnest(risk, .drop =TRUE)
-        x$data <- NULL
+            dplyr::select(-data) %>%
+            tidyr::unnest(cols = c(risk))
         x <- as.data.frame(x)
         x <- dplyr::distinct(x,
                              SEM = x$SEM,
