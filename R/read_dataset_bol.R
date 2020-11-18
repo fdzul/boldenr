@@ -77,18 +77,27 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                                         full.names = TRUE),
                               list.files, pattern = "txt", full.names = TRUE)
         l <- unlist(purrr::map(l_files, stringr::str_subset, c(inf)))
+        col_class <- c(rep("character", 5), "integer",
+                       rep("character", 5), "integer",
+                       "character", "integer", "integer", "numeric",
+                       "character", "integer", "integer",
+                       rep("character", 3), rep("integer", 11),
+                       "numeric", rep("character", 5),
+                       rep("character", 4), "logical", "integer")
+
         x <- purrr::map_dfr(l, read.table,
                             sep = "\t",
                             allowEscapes = TRUE,
                             header = TRUE,
                             skipNul = TRUE,
+                            colClasses = col_class,
                             fileEncoding = "UCS-2LE") %>%
             tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
             tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
-            dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
-        x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
-        x$Jurisdiccion <- stringr::str_trim(x$Jurisdiccion, side = "both")
+            dplyr::mutate(Localidad = stringr::str_to_title(Localidad)) %>%
+            dplyr::mutate(Municipio = stringr::str_trim(Municipio, side = "both"),
+                          Jurisdiccion = stringr::str_trim(Jurisdiccion, side = "both"))
         x
     } else if ("Nebulizacion" == inf){
         l_files <- purrr::map(list.dirs(path = path,
