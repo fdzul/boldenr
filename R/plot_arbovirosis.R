@@ -44,21 +44,21 @@ plot_arbovirosis <- function(x, state, year1, year2){
                                value = "n")
     names(probables)[c(2,3)] <- paste("p",c(year1, year2), sep = "_")
 
-    c1 <- sym(expr(!! paste("c", year1, sep = "_")))
-    c2 <- sym(expr(!! paste("c", year2, sep = "_")))
-    p1 <- sym(expr(!! paste("p", year1, sep = "_")))
-    p2 <- sym(expr(!! paste("p", year2, sep = "_")))
+    c1 <- rlang::sym(rlang::expr(!! paste("c", year1, sep = "_")))
+    c2 <- rlang::sym(rlang::expr(!! paste("c", year2, sep = "_")))
+    p1 <- rlang::sym(rlang::expr(!! paste("p", year1, sep = "_")))
+    p2 <- rlang::sym(rlang::expr(!! paste("p", year2, sep = "_")))
     ##
     ggplot2::ggplot(data = probables,
                     ggplot2::aes(x = SEM)) +
-        ggplot2::geom_area(aes(y = !! p1),
+        ggplot2::geom_area(ggplot2::aes(y = !! p1),
                   colour = "white",
                   fill = "lightgreen", alpha = 0.90) +
         ggplot2::theme_classic() +
         ggplot2::ylab("Casos Probables por Arbovirosis (Áreas)") +
         ggplot2::xlab("Semanas Epidemiológicas")+
-        ggplot2::theme(title = element_text(size = 12)) +
-        ggplot2::geom_area(aes(y = !! p2),
+        ggplot2::theme(title = ggplot2::element_text(size = 12)) +
+        ggplot2::geom_area(ggplot2::aes(y = !! p2),
                   col = "white",
                   fill = "lightblue", alpha = 0.80) +
         ggplot2::annotate("text",
@@ -78,7 +78,7 @@ plot_arbovirosis <- function(x, state, year1, year2){
                       x = SEM,
                       colour = paste("Confirmado", year1, sep = " ")),
                   size = 1) +
-        ggplot2::scale_y_continuous(sec.axis = sec_axis(~.*0.25,
+        ggplot2::scale_y_continuous(ggplot2::sec.axis = ggplot2::sec_axis(~.*0.25,
                                                name = "Casos Confirmado por Arbovirosis (Líneas)")) +
         ggplot2::theme(legend.position = c(0.2, 0.9)) +
         ggplot2::geom_point(data = confirmados,
