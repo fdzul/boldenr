@@ -4,8 +4,20 @@
 \alias{heatmap_jur_prob_conf}
 \title{Generate a heatmap of confirmed and probable cases by health jurisdiction}
 \usage{
-heatmap_jur_prob_conf(x, state, years, clus, prob, rtitlesize, mtextsize,
-  rlabelsize, clabelsize, rlabeltextsize, clabeltextsize, heatmap_color)
+heatmap_jur_prob_conf(
+  x,
+  state,
+  years,
+  clus,
+  prob,
+  rtitlesize,
+  mtextsize,
+  rlabelsize,
+  clabelsize,
+  rlabeltextsize,
+  clabeltextsize,
+  heatmap_color
+)
 }
 \arguments{
 \item{x}{is the dataset of sinave. For more information, see \url{http://vectores.sinave.gob.mx/}}

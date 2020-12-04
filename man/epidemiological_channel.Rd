@@ -4,8 +4,18 @@
 \alias{epidemiological_channel}
 \title{Graph the epidemiological channel}
 \usage{
-epidemiological_channel(x, edo, mun = NULL, state, scale_case, z, juris,
-  jurisdiccion = NULL, year1, year2)
+epidemiological_channel(
+  x,
+  edo,
+  mun = NULL,
+  state,
+  scale_case,
+  z,
+  juris,
+  jurisdiccion = NULL,
+  year1,
+  year2
+)
 }
 \arguments{
 \item{x}{is the historic epidemiological dataset.}

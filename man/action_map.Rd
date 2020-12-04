@@ -21,6 +21,9 @@ action_map(data, mun, cve_mpo, loc, week, num_loc, blocks)
 
 \item{blocks}{is the sf object of blocks.}
 }
+\value{
+
+}
 \description{
 This function generate the action map of vector control.
 }

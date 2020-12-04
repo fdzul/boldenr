@@ -4,8 +4,18 @@
 \alias{heatmap_jur_hosp}
 \title{Heatmap of hospitalized cases}
 \usage{
-heatmap_jur_hosp(x, state, year, rtitlesize, mtextsize, rlabelsize,
-  clabelsize, rlabeltextsize, clabeltextsize, heatmap_color)
+heatmap_jur_hosp(
+  x,
+  state,
+  year,
+  rtitlesize,
+  mtextsize,
+  rlabelsize,
+  clabelsize,
+  rlabeltextsize,
+  clabeltextsize,
+  heatmap_color
+)
 }
 \arguments{
 \item{x}{is the sinave datasets. For more information, see \url{http://vectores.sinave.gob.mx/}.}

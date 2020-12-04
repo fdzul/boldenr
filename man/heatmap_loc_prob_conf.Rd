@@ -4,9 +4,20 @@
 \alias{heatmap_loc_prob_conf}
 \title{Generate of heatmap of confirmed or probables cases by localities.}
 \usage{
-heatmap_loc_prob_conf(x, probable, year, state, rtitlesize, mtextsize,
-  rlabelsize, clabelsize, rlabeltextsize, clabeltextsize, heatmap_color,
-  n_loc)
+heatmap_loc_prob_conf(
+  x,
+  probable,
+  year,
+  state,
+  rtitlesize,
+  mtextsize,
+  rlabelsize,
+  clabelsize,
+  rlabeltextsize,
+  clabeltextsize,
+  heatmap_color,
+  n_loc
+)
 }
 \arguments{
 \item{x}{is the dataset of sinave. For more information, see \url{http://vectores.sinave.gob.mx/}.}
