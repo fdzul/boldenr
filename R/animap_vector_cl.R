@@ -15,7 +15,7 @@
 #' @return a gif file of animation.
 #' @export
 #' @importFrom magrittr %>%
-#' @import sf.ggplot2, tmap
+#' @import sf, ggplot2, tmap
 #'
 #' @seealso \link[tmap]{tmap_animation}
 #'
