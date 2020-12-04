@@ -27,6 +27,9 @@ a tmap object.
 \description{
 This function generate the action map of vector control.
 }
+\examples{
+1+1
+}
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 }

@@ -27,7 +27,7 @@ Plot the dengue cases by state and serotype
 1+1
 }
 \seealso{
-\code{\link[cowplot]{drawplot}}.
+\link[cowplot]{draw_plot} and \link[cowplot]{ggdraw}.
 }
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}

@@ -6,7 +6,7 @@
 #' @param x_serotype The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.
 #' @param y_serotype The y location of the dengue serotype plot. Sea also cowplot::draw_plot?.
 #'
-#' @seealso \code{\link[cowplot]{drawplot}}.
+#' @seealso \link[cowplot]{draw_plot} and \link[cowplot]{ggdraw}.
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
 #' @return a plot of class ggplot.

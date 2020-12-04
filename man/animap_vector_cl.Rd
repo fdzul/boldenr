@@ -30,7 +30,7 @@ a gif file of animation.
 this function created the animated map for larvae control.
 }
 \details{
-\link[INLA]{inla}.
+\link[tmap]{tmap_animation}.
 }
 \examples{
 1+1

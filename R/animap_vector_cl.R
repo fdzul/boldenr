@@ -18,7 +18,7 @@
 #' @seealso \link[tmap]{tmap_animation}
 #'
 #' @examples 1+1
-#' @details \link[INLA]{inla}.
+#' @details \link[tmap]{tmap_animation}.
 animap_vector_cl <- function(path, locality, path_loc, vel, dir, name, x_leg, y_leg){
 
 
