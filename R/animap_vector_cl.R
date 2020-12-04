@@ -15,7 +15,7 @@
 #' @return a gif file of animation.
 #' @export
 #'
-#' @seealso \link[tmap]{tmap::tmap_animation}
+#' @seealso \link[tmap]{tmap_animation}
 #'
 #' @examples 1+1
 #' @details \link[INLA]{inla}.
