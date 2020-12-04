@@ -78,7 +78,7 @@ plot_arbovirosis <- function(x, state, year1, year2){
                       x = SEM,
                       colour = paste("Confirmado", year1, sep = " ")),
                   size = 1) +
-        ggplot2::scale_y_continuous(ggplot2::sec.axis = ggplot2::sec_axis(~.*0.25,
+        ggplot2::scale_y_continuous(sec.axis = ggplot2::sec_axis(~.*0.25,
                                                name = "Casos Confirmado por Arbovirosis (Líneas)")) +
         ggplot2::theme(legend.position = c(0.2, 0.9)) +
         ggplot2::geom_point(data = confirmados,
