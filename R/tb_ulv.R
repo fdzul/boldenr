@@ -16,7 +16,6 @@
 #'
 #' @examples 1+1
 tb_ulv <- function(x, jur = NULL, mun, coldfog){
-    Encoding(x$Tipo.de.Nebulización) <- "latin1"
     if(coldfog == TRUE){
         x <- x %>% dplyr::filter(Tipo.de.Nebulización == "Nebulización UBV")
     } else {
