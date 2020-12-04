@@ -7,7 +7,7 @@
 plot_state_serotype(dataset, year, scale_serotype, x_serotype, y_serotype)
 }
 \arguments{
-\item{dataset}{is the dataset of sinave \link{http://vectores.sinave.gob.mx/}.}
+\item{dataset}{is the dataset of \href{**SINAVE**}{http://vectores.sinave.gob.mx/}.}
 
 \item{year}{is the year of dataset.}
 
