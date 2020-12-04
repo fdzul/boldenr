@@ -159,7 +159,7 @@ epidemiological_channel <- function(x, edo, mun = NULL, state, scale_case, z,
                    alpha = 0.5,
                    fill = "black",
                    stroke = 2) +
-        geom_line(data = z2,
+        ggplot2::geom_line(data = z2,
                   ggplot2::aes(x = SEM, y = n),
                   #alpha = 0.5,
                   size = 1.5,

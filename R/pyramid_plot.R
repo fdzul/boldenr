@@ -44,23 +44,24 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
     dat$count_ok <- ifelse(dat$sex == "Masculino", -1*dat$count, dat$count)
     ###
     if(by_juris == FALSE){
-        ggplot2::ggplot(dat, aes(x = age_class,
+        ggplot2::ggplot(dat,
+                        ggplot2::aes(x = age_class,
                         y = count_ok,
                         fill =  sex)) +
             ggplot2::geom_bar(data = subset(dat, sex == "Femenino"),
                      stat = "identity", alpha = 1, col = "gray90") +
             ggplot2::geom_text(data = subset(dat, sex == "Femenino"),
-                      aes(label = count_ok),
+                               ggplot2::aes(label = count_ok),
                       colour = "white",
                       size = 3.5,
-                      position = position_stack(vjust = 0.5)) +
+                      position = ggplot2::position_stack(vjust = 0.5)) +
             ggplot2::geom_bar(data = subset(dat, sex == "Masculino"),
                      stat = "identity", alpha = 1, col = "gray90") +
             ggplot2::geom_text(data = subset(dat, sex == "Masculino"),
-                      aes(label = abs(count_ok)),
+                               ggplot2::aes(label = abs(count_ok)),
                       colour = "white",
                       size = 3.5,
-                      position = position_stack(vjust = 0.5)) +
+                      position = ggplot2::position_stack(vjust = 0.5)) +
             ggplot2::coord_flip() +
             ggplot2::scale_fill_brewer("", palette = pal) +
             #theme_bw() +
@@ -80,7 +81,7 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
             ggplot2::theme(axis.title.x = ggplot2::element_text(size = 15)) +
             ggplot2::theme(axis.title.y = ggplot2::element_text(size = 15)) +
             ggplot2::theme(legend.background = ggplot2::element_rect(fill="transparent")) +
-            ggplot2::theme(legend.text = element_text(size = 12))
+            ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
     }else {
         ## we nead a dataset with age, sex, count, prop, loc
         dat2 <- x %>%
@@ -97,17 +98,17 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
             ggplot2::geom_bar(data = subset(dat2, sex == "Femenino"),
                      stat = "identity", alpha = 1, col = "gray90") +
             ggplot2::geom_text(data = subset(dat2, sex == "Femenino"),
-                               aes_(label = count_ok),
+                               ggplot2::aes(label = count_ok),
                       colour = "white",
                       size = 3.5,
-                      position = position_stack(vjust = 0.5)) +
+                      position = ggplot2::position_stack(vjust = 0.5)) +
             ggplot2::geom_bar(data = subset(dat2, sex == "Masculino"),
                      stat = "identity",alpha = 1, col = "gray90") +
             ggplot2::geom_text(data = subset(dat2, sex == "Masculino"),
-                      aes_(label = abs(count_ok)),
+                               ggplot2::aes(label = abs(count_ok)),
                       colour = "white",
                       size = 3.5,
-                      position = position_stack(vjust = 0.5)) +
+                      position = ggplot2::position_stack(vjust = 0.5)) +
             ggplot2::coord_flip() +
             ggplot2::scale_fill_brewer("", palette = pal) +
             ggplot2::facet_wrap(DES_JUR_RES) +
