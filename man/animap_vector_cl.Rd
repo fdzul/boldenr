@@ -13,7 +13,7 @@ animap_vector_cl(path, locality, path_loc, vel, dir, name, x_leg, y_leg)
 
 \item{path_loc}{is the directory of shepefile dataset for limit locality.}
 
-\item{vel}{is the delay time between images. See also \link[tmap]{tmap_animation} and  \link[tamp]{fps}}
+\item{vel}{is the delay time between images. See also \link[tmap]{tmap_animation} and \link[tmap]{fps}}
 
 \item{dir}{is the directory where the animation will be saved.}
 

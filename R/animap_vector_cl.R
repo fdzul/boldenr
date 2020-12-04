@@ -5,7 +5,7 @@
 #' @param path is the directory of the larvae control file.
 #' @param locality is the locality target.
 #' @param path_loc is the directory of shepefile dataset for limit locality.
-#' @param vel is the delay time between images. See also \link[tmap]{tmap_animation} and  \link[tamp]{fps}
+#' @param vel is the delay time between images. See also \link[tmap]{tmap_animation} and \link[tmap]{fps}
 #' @param dir is the directory where the animation will be saved.
 #' @param name is the name of the gif file.
 #' @param x_leg is the x position of legend.
