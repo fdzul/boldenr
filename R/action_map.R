@@ -11,8 +11,10 @@
 #'
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #'
-#' @return
+#' @return a tmap object.
 #' @export
+#'
+#' @import dplyr, lubridate, tmap
 #'
 #' @examples
 action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
@@ -64,7 +66,7 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
     z_x <-  dplyr::left_join(x = z[, c(-9,-10, -11,-12)],
                              y = x,
                              by = c("sec_manz", "Municipio")) %>%
-        dplyr::mutate(avance = rep("Acumulado", times = n())) %>%
+        dplyr::mutate(avance = rep("Acumulado", times = dplyr::n())) %>%
         dplyr::filter(!is.na(sector))
     z_y <-  dplyr::left_join(x = z[, c(-9,-10, -11,-12)],
                              y = y,
