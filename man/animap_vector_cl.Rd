@@ -36,7 +36,7 @@ this function created the animated map for larvae control.
 1+1
 }
 \seealso{
-\link[tmap]{tmap::tmap_animation}
+\link[tmap]{tmap_animation}
 }
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
