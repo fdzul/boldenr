@@ -94,7 +94,7 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
         dat2$sex <- ifelse(dat2$IDE_SEX == 1, "Masculino", "Femenino")
         dat2$count_ok <- ifelse(dat2$sex == "Masculino", -1*dat2$count, dat2$count)
         ggplot2::ggplot(dat2,
-               aes_(x = age_class, y = count_ok, fill = sex)) +
+                        ggplot2::aes(x = age_class, y = count_ok, fill = sex)) +
             ggplot2::geom_bar(data = subset(dat2, sex == "Femenino"),
                      stat = "identity", alpha = 1, col = "gray90") +
             ggplot2::geom_text(data = subset(dat2, sex == "Femenino"),
