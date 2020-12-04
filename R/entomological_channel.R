@@ -126,76 +126,76 @@ entomological_channel <- function(x, z, y, mun1, nom_loc, x_title, sep_ticks){
     z <- z %>% dplyr::filter(Localidad == nom_loc)
 
     ####
-    ggplot(data = x) +
-        geom_area(aes(x = week, y = Alerta),
+    ggplot2::ggplot(data = x) +
+        ggplot2::geom_area(ggplot2::aes(x = week, y = Alerta),
                   col = "gray90",
                   fill = "red", alpha = 0.90) +
-        geom_area(aes(y = Seguridad, x = week),
+        ggplot2::geom_area(ggplot2::aes(y = Seguridad, x = week),
                   col = "white",
                   fill = "orange", alpha = 0.80) +
-        geom_area(aes(y = Exito, x = week),
+        ggplot2::geom_area(ggplot2::aes(y = Exito, x = week),
                   col = "white",
                   fill = "lawngreen", alpha = 1) +
         #theme_classic() +
-        ylab(x_title) +
-        xlab("Semanas epidemiológicas") +
-        annotate("text",
+        ggplot2::ylab(x_title) +
+        ggplot2::xlab("Semanas epidemiológicas") +
+        ggplot2::annotate("text",
                  label = "Epidémico",
                  x = 40,
                  y = max(x$Alerta),
                  size = 6,
                  colour = "grey40") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = "Alerta",
                  x = unlist(x[ifelse(x$Alerta == max(x$Alerta),
                                      !is.na(x$week), NA), "week"]),
                  y = stats::quantile(x$Alerta, probs = 0.75),
                  size = 6,
                  colour = "white") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = "Seguridad",
                  x = unlist(x[ifelse(x$Seguridad == max(x$Seguridad),
                                      !is.na(x$week), NA), "week"]),
                  y = quantile(x$Seguridad, probs = 0.75),
                  size = 6,
                  colour = "white") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = "Éxito",
                  x = unlist(x[ifelse(x$Exito == max(x$Exito),
                                      !is.na(x$week), NA), "week"]),
                  y = stats::median(x$Exito, probs = 0.75),
                  size = 6,
                  colour = "grey40") +
-        scale_y_continuous(breaks = seq(from = 0, to = max(x$Alerta),
+        ggplot2::scale_y_continuous(breaks = seq(from = 0, to = max(x$Alerta),
                                         by = sep_ticks),
                            limits = c(0, max(x$Alerta))) +
-        scale_x_continuous(breaks = seq(from = 1, to = 52, by = 2),
+        ggplot2::scale_x_continuous(breaks = seq(from = 1, to = 52, by = 2),
                            limits = c(1,length(x$week))) +
-        theme_classic() +
-        ggtitle(label = nom_loc) +
-        theme(axis.text.x =  element_text(size = 12.5,
+        ggplot2::theme_classic() +
+        ggplot2::ggtitle(label = nom_loc) +
+        ggplot2::theme(axis.text.x =  ggplot2::element_text(size = 12.5,
                                           face = "bold",
                                           color = "grey60")) +
-        theme(axis.text.y = element_text(size = 12,
+        ggplot2::theme(axis.text.y = ggplot2::element_text(size = 12,
                                          face = "bold",
                                          color = "grey60")) +
-        theme(axis.title.x = element_text(size = 14,
+        ggplot2::theme(axis.title.x = ggplot2::element_text(size = 14,
                                           face = "bold",
                                           color = "grey40")) +
-        theme(axis.title.y = element_text(size = 20,
+        ggplot2::theme(axis.title.y = ggplot2::element_text(size = 20,
                                           face = "bold",
                                           color = "grey40")) +
-        theme(axis.line = element_line(colour = "grey90",
+        ggplot2::theme(axis.line = ggplot2::element_line(colour = "grey90",
                                        size = 1,
                                        linetype = "solid")) +
-        geom_line(data = z,
-                  aes(x = Semana.Epidemiologica,
+        ggplot2::geom_line(data = z,
+                           ggplot2::aes(x = Semana.Epidemiologica,
                       y = mean_count),
                   size = 1.5,
                   alpha = 0.6,
                   col = "black") +
-        geom_point(data = z,
-                   aes(x = Semana.Epidemiologica,
+        ggplot2::geom_point(data = z,
+                            ggplot2::aes(x = Semana.Epidemiologica,
                        y = mean_count),
                    size = 3,
                    fill = "grey",
