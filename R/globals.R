@@ -6,4 +6,4 @@ utils::globalVariables(c('%>%', "ver_blocks", "MUNICIPIO", "LOCALIDAD",
                          'geometry', 'week', 'Jurisdiccion', 'Casas.Revisadas',
                          'Casas.Trabajadas', 'desc', 'Casas Trabajadas hasta la Semana',
                          'mean_count', 'NombreMunicipio', "year", "mun",
-                         "Huevos", "quantil", "Huevecillos. "))
+                         "Huevos", "quantil", "Huevecillos"))

@@ -49,40 +49,40 @@ plot_arbovirosis <- function(x, state, year1, year2){
     p1 <- sym(expr(!! paste("p", year1, sep = "_")))
     p2 <- sym(expr(!! paste("p", year2, sep = "_")))
     ##
-    ggplot(data = probables,
-           aes(x = SEM)) +
-        geom_area(aes(y = !! p1),
+    ggplot2::ggplot(data = probables,
+                    ggplot2::aes(x = SEM)) +
+        ggplot2::geom_area(aes(y = !! p1),
                   colour = "white",
                   fill = "lightgreen", alpha = 0.90) +
-        theme_classic() +
-        ylab("Casos Probables por Arbovirosis (Áreas)") +
-        xlab("Semanas Epidemiológicas")+
-        theme(title = element_text(size = 12)) +
-        geom_area(aes(y = !! p2),
+        ggplot2::theme_classic() +
+        ggplot2::ylab("Casos Probables por Arbovirosis (Áreas)") +
+        ggplot2::xlab("Semanas Epidemiológicas")+
+        ggplot2::theme(title = element_text(size = 12)) +
+        ggplot2::geom_area(aes(y = !! p2),
                   col = "white",
                   fill = "lightblue", alpha = 0.80) +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = paste0(year1),
                  x = 38,
                  y = 1000,
                  size = 6,
                  colour = "black") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = paste0(year2),
                  x = 5,
                  y = 200,
                  size = 6,
                  colour = "black") +
-        geom_line(data = confirmados,
-                  aes(y = (!! c1)/(0.25),
+        ggplot2::geom_line(data = confirmados,
+                           ggplot2::aes(y = (!! c1)/(0.25),
                       x = SEM,
                       colour = paste("Confirmado", year1, sep = " ")),
                   size = 1) +
-        scale_y_continuous(sec.axis = sec_axis(~.*0.25,
+        ggplot2::scale_y_continuous(sec.axis = sec_axis(~.*0.25,
                                                name = "Casos Confirmado por Arbovirosis (Líneas)")) +
-        theme(legend.position = c(0.2, 0.9)) +
-        geom_point(data = confirmados,
-                   aes(y =  (!! c1)/(0.25),
+        ggplot2::theme(legend.position = c(0.2, 0.9)) +
+        ggplot2::geom_point(data = confirmados,
+                            ggplot2::aes(y =  (!! c1)/(0.25),
                        x = SEM,
                        colour = paste("Confirmado", year1, sep = " ")),
                    shape = 21,
@@ -90,13 +90,13 @@ plot_arbovirosis <- function(x, state, year1, year2){
                    stroke = 2,
                    col = "darkgreen",
                    alpha = 0.70) +
-        geom_line(data = confirmados,
-                  aes(y = (!! c2)/(0.25),
+        ggplot2::geom_line(data = confirmados,
+                           ggplot2::aes(y = (!! c2)/(0.25),
                       x = SEM,
                       colour = paste("Confirmado", year2, sep = " ")),
                   size = 1) +
-        geom_point(data = confirmados,
-                   aes(y = (!! c2)/(0.25),
+        ggplot2::geom_point(data = confirmados,
+                            ggplot2::aes(y = (!! c2)/(0.25),
                        x = SEM,
                        colour = paste("Confirmado", year2, sep = " ")),
                    shape = 21,
@@ -104,7 +104,7 @@ plot_arbovirosis <- function(x, state, year1, year2){
                    stroke = 2,
                    col = "blue",
                    alpha = 0.70) +
-        scale_colour_manual("", values = c("darkgreen",
+        ggplot2::scale_colour_manual("", values = c("darkgreen",
                                            "darkblue"))
 }
 

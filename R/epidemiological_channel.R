@@ -132,68 +132,72 @@ epidemiological_channel <- function(x, edo, mun = NULL, state, scale_case, z,
             dplyr::summarise(n = dplyr::n())
     }
     ##
-    ggplot(data = x,
-           aes(x = SEM)) +
-        geom_area(aes(y = q75),
+    ggplot2::ggplot(data = x,
+                    ggplot2::aes(x = SEM)) +
+        ggplot2::geom_area(ggplot2::aes(y = q75),
                   col = "grey90",
                   size = 0.8,
                   fill = "#f94d00", alpha = 0.80) +
-        geom_area(aes(y = q50),
+        ggplot2::geom_area(ggplot2::aes(y = q50),
                   col = "white",
                   size = 0.8,
                   fill = "#ffcc00", alpha = 0.90) +
-        geom_area(aes(y = q25),
+        ggplot2::geom_area(ggplot2::aes(y = q25),
                   col = "white",
                   size = 0.8,
                   fill = "#a7fc00",
                   alpha = 0.80) +
-        geom_line(data = z1, aes(x = SEM, y = n),
+        ggplot2::geom_line(data = z1,
+                           ggplot2::aes(x = SEM, y = n),
                   alpha = 0.5,
                   size = 1.5,
                   colour =  "grey") +
-        geom_point(data = z1, aes(x = SEM, y = n),
+        ggplot2::geom_point(data = z1,
+                            ggplot2::aes(x = SEM, y = n),
                    colour =  "red",
                    shape = 21,
                    alpha = 0.5,
                    fill = "black",
                    stroke = 2) +
-        geom_line(data = z2, aes(x = SEM, y = n),
+        geom_line(data = z2,
+                  ggplot2::aes(x = SEM, y = n),
                   #alpha = 0.5,
                   size = 1.5,
                   colour =  "black") +
-        geom_point(data = z2, aes(x = SEM, y = n),
+        ggplot2::geom_point(data = z2,
+                            ggplot2::aes(x = SEM, y = n),
                   colour =  "white",
                   shape = 21,
                   alpha = 0.5,
                   fill = "red",
                   stroke = 2) +
-        ylab("casos") +
-        xlab("Semanas epidemiológicas") +
-        annotate("text",
+        ggplot2::ylab("casos") +
+        ggplot2::xlab("Semanas epidemiológicas") +
+        ggplot2::annotate("text",
                  label = "Epidémico",
                  x = 40,
                  y = max(x$q75),
                  size = 6,
                  colour = "black") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = "Alerta",
                  x = 32,
                  y = max(x$q50),
                  size = 6,
                  colour = "black") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = "Seguridad",
                  x = 32,
                  y = max(x$q25),
                  size = 6,
                  colour = "black") +
-        annotate("text",
+        ggplot2::annotate("text",
                  label = "Éxito",
                  x = 41,
                  y = min(x$q25)+3,
                  size = 6,
                  colour = "black") +
-        scale_x_continuous(breaks = seq(from = 1,
+        ggplot2::scale_x_continuous(breaks = seq(from = 1,
                                         to = 52,
                                         by = 2),
                            limits = c(1,52)) +

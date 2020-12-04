@@ -77,23 +77,23 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
     ##
     if(all == FALSE){
         y <- y %>% dplyr::filter(Localidad == nom_loc)
-        ggplot(data = y[y$Indicador == "Manzana",],
-               aes(x = as.factor(Semana.Epidemiologica),
+        ggplot2::ggplot(data = y[y$Indicador == "Manzana",],
+                        ggplot2::aes(x = as.factor(Semana.Epidemiologica),
                    y = Promedio,
                    #colour = Indicador,
                    group = Indicador)) +
-            geom_line(size = 2.5,
+            ggplot2::geom_line(size = 2.5,
                       alpha = 0.6,
                       col = "darkred") +
-            geom_point(shape = 21,
+            ggplot2::geom_point(shape = 21,
                        fill = "yellow",
                        size = 3,
                        stroke = 3,
                        alpha = 0.6,
                        colour = "red") +
             #facet_wrap(~Localidad, scales = "free_y") +
-            geom_bar(data = y[y$Indicador2 == "Ovitrampa",],
-                     aes(x = as.factor(Semana.Epidemiologica),
+            ggplot2::geom_bar(data = y[y$Indicador2 == "Ovitrampa",],
+                              ggplot2::aes(x = as.factor(Semana.Epidemiologica),
                          y = Porcentaje/0.25),
                      stat = "identity",
                      size = 0.4,
@@ -101,37 +101,37 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
                      col = "black",
                      fill = "gray",
                      alpha = 0.2) +
-            geom_text(data = y[y$Indicador2 == "Ovitrampa",],
-                      aes(x = as.factor(Semana.Epidemiologica),
+            ggplot2::geom_text(data = y[y$Indicador2 == "Ovitrampa",],
+                               ggplot2::aes(x = as.factor(Semana.Epidemiologica),
                           label = Porcentaje,
                           y = Porcentaje/0.25),
                       vjust = 1.3,
                       nudge_y = -0.1) +
-            theme_linedraw() +
-            scale_y_continuous(sec.axis = sec_axis(~.*0.25,
+            ggplot2::theme_linedraw() +
+            ggplot2::scale_y_continuous(sec.axis = ggplot2::sec_axis(~.*0.25,
                                                    name = "Porcentaje de Ovitrampas Positivas (Barras)")) +
-            theme(axis.title.y = element_text(color = "darkred",
+            ggplot2::theme(axis.title.y = element_text(color = "darkred",
                                               size=13),
                   axis.title.y.right = element_text(color = "gray50",
                                                     size=13)) +
-            ylab("Numero Promedio de Ovitrampas (Líneas)") +
-            xlab("Semanas Epidemiologicas")
+            ggplot2::ylab("Numero Promedio de Ovitrampas (Líneas)") +
+            ggplot2::xlab("Semanas Epidemiológicas")
     } else {
-        ggplot(data = y[y$Indicador == "Ovitrampa",],
-               aes(x = Semana.Epidemiologica,
+        ggplot2::ggplot(data = y[y$Indicador == "Ovitrampa",],
+                        ggplot2::aes(x = Semana.Epidemiologica,
                    y = Promedio,
                    #colour = Indicador,
                    group = Indicador)) +
-            geom_line(size = 1.3,
+            ggplot2::geom_line(size = 1.3,
                       col = "darkred") +
-            geom_point(shape = 21,
+            ggplot2::geom_point(shape = 21,
                        fill = "yellow",
                        stroke = 2,
                        colour = "red",
                        alpha = 0.70) +
-            facet_wrap(Localidad, scales = "free_y") +
-            geom_bar(data = y[y$Indicador2 == "Ovitrampa",],
-                     aes_(x = Semana.Epidemiologica,
+            ggplot2::facet_wrap(Localidad, scales = "free_y") +
+            ggplot2::geom_bar(data = y[y$Indicador2 == "Ovitrampa",],
+                              ggplot2::aes_(x = Semana.Epidemiologica,
                          y = Porcentaje/0.25),
                      stat = "identity",
                      size = 0.2,
@@ -139,14 +139,14 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
                      col = "black",
                      fill = "steelblue",
                      alpha = 0.1) +
-            scale_x_continuous(limits = c(min(y$Semana.Epidemiologica),
+            ggplot2::scale_x_continuous(limits = c(min(y$Semana.Epidemiologica),
                                           max(y$Semana.Epidemiologica)),
                                breaks = seq(from = 0,to = max(y$Semana.Epidemiologica), by = 2)) +
-            scale_y_continuous(sec.axis = sec_axis(~.*0.25,
+            ggplot2::scale_y_continuous(sec.axis = sec_axis(~.*0.25,
                                                    name = "Porcentaje de Ovitrampas Positivas (Barras)")) +
-            theme_linedraw() +
-            ylab("Numero Promedio de Ovitrampas (Líneas)") +
-            xlab("Semanas Epidemiologicas")
+            ggplot2::theme_linedraw() +
+            ggplot2::ylab("Numero Promedio de Ovitrampas (Líneas)") +
+            ggplot2::xlab("Semanas Epidemiológicas")
     }
 
 }

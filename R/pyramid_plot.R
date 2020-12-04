@@ -74,12 +74,12 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
               #                                  by= median(dat$count_ok)/max(dat$count_ok)))) +
             ggplot2::theme(legend.position = c(.1, .9)) +
             #theme_linedraw() +
-            ggplot2::theme(title = element_text(size = 12)) +
-            ggplot2::theme(axis.text.x= element_text(size = 12)) +
-            ggplot2::theme(axis.text.y= element_text(size = 14)) +
-            ggplot2::theme(axis.title.x = element_text(size = 15)) +
-            ggplot2::theme(axis.title.y = element_text(size = 15)) +
-            ggplot2::theme(legend.background = element_rect(fill="transparent")) +
+            ggplot2::theme(title = ggplot2::element_text(size = 12)) +
+            ggplot2::theme(axis.text.x= ggplot2::element_text(size = 12)) +
+            ggplot2::theme(axis.text.y= ggplot2::element_text(size = 14)) +
+            ggplot2::theme(axis.title.x = ggplot2::element_text(size = 15)) +
+            ggplot2::theme(axis.title.y = ggplot2::element_text(size = 15)) +
+            ggplot2::theme(legend.background = ggplot2::element_rect(fill="transparent")) +
             ggplot2::theme(legend.text = element_text(size = 12))
     }else {
         ## we nead a dataset with age, sex, count, prop, loc
@@ -97,7 +97,7 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
             ggplot2::geom_bar(data = subset(dat2, sex == "Femenino"),
                      stat = "identity", alpha = 1, col = "gray90") +
             ggplot2::geom_text(data = subset(dat2, sex == "Femenino"),
-                      aes_(label = count_ok),
+                               aes_(label = count_ok),
                       colour = "white",
                       size = 3.5,
                       position = position_stack(vjust = 0.5)) +
@@ -119,11 +119,11 @@ pyramid_plot <- function(x, by_juris, state, year, pal){
                                labels = abs(seq(from = min(dat$count_ok)-1, to = max(dat$count_ok),
                                                 by= 5))) +
             ggplot2::theme(legend.position = c(.1, .9)) +
-            ggplot2::theme(axis.text.x= element_text(size = 12)) +
-            ggplot2::theme(axis.text.y= element_text(size = 14)) +
-            ggplot2::theme(axis.title.x = element_text(size = 15)) +
-            ggplot2::theme(axis.title.y = element_text(size = 15)) +
-            ggplot2::theme(legend.background = element_rect(fill="transparent")) +
-            ggplot2::theme(legend.text = element_text(size = 12))
+            ggplot2::theme(axis.text.x= ggplot2::element_text(size = 12)) +
+            ggplot2::theme(axis.text.y= ggplot2::element_text(size = 14)) +
+            ggplot2::theme(axis.title.x = ggplot2::element_text(size = 15)) +
+            ggplot2::theme(axis.title.y = ggplot2::element_text(size = 15)) +
+            ggplot2::theme(legend.background = ggplot2::element_rect(fill="transparent")) +
+            ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
     }
 }
