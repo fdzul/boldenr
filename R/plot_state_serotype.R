@@ -36,33 +36,33 @@ plot_state_serotype <- function(dataset, year, scale_serotype, x_serotype,
                                                 "DG",
                                                 "DNG")[c(3,2,1)])
     p <- ggplot2::ggplot(data = as.data.frame(x_state),
-                         aes(y = n,
+                         ggplot2::aes(y = n,
                              label = n,
                              x = stats::reorder(DES_EDO_RES2, n,
                                                 FUN = sum),
                              fill = DES_DIAG_FINAL)) +
-        ggplot2::geom_bar(position = position_stack(reverse = F),
+        ggplot2::geom_bar(position = ggplot2::position_stack(reverse = F),
                           stat = "identity",
                           color="white") +
         ggplot2::coord_flip() +
         ggplot2::ylab("Casos de Dengue") +
         ggplot2::xlab("Estados") +
-        ggplot2::geom_text(position = position_stack(vjust = 0.5),
+        ggplot2::geom_text(position = ggplot2::position_stack(vjust = 0.5),
                            size = 2) +
         ggplot2::scale_fill_brewer("", palette = "YlOrRd") +
         ggplot2::theme_classic()  +
         ggplot2::theme(legend.position = c(0.9,0.72)) +
-        ggplot2::theme(legend.text = element_text(size = 12)) +
-        ggplot2::theme(title = element_text(size = 12)) +
+        ggplot2::theme(legend.text = ggplot2::element_text(size = 12)) +
+        ggplot2::theme(title = ggplot2::element_text(size = 12)) +
         ggplot2::theme(legend.justification = c(1,0))  +
-        ggplot2::theme(axis.text.x = element_text(size = 10)) +
-        ggplot2::theme(axis.text.y = element_text(size = 8, face = "bold")) +
-        ggplot2::theme(axis.title.x = element_text(size = 14)) +
-        ggplot2::theme(axis.title.y = element_text(size = 20)) +
-        ggplot2::theme(strip.text = element_text(size = 20)) +
-        ggplot2::theme(legend.background = element_rect(fill="transparent")) +
-        ggplot2::theme(legend.key = element_rect(colour = NA, fill = NA),
-                       legend.text = element_text(face = "bold", size = 12))
+        ggplot2::theme(axis.text.x = ggplot2::element_text(size = 10)) +
+        ggplot2::theme(axis.text.y = ggplot2::element_text(size = 8, face = "bold")) +
+        ggplot2::theme(axis.title.x = ggplot2::element_text(size = 14)) +
+        ggplot2::theme(axis.title.y = ggplot2::element_text(size = 20)) +
+        ggplot2::theme(strip.text = ggplot2::element_text(size = 20)) +
+        ggplot2::theme(legend.background = ggplot2::element_rect(fill="transparent")) +
+        ggplot2::theme(legend.key = ggplot2::element_rect(colour = NA, fill = NA),
+                       legend.text = ggplot2::element_text(face = "bold", size = 12))
 
     ### serotipos
     ser <- x %>%
@@ -72,7 +72,7 @@ plot_state_serotype <- function(dataset, year, scale_serotype, x_serotype,
         dplyr::group_by(DES_EDO_RES, DENGUE_SER_TRIPLEX) %>%
         dplyr::summarise(n = dplyr::n()) %>%
         dplyr::mutate(DES_EDO_RES2 = stringr::str_to_title(DES_EDO_RES)) %>%
-        ggplot2::ggplot(aes(x = stats::reorder(DES_EDO_RES2, n,
+        ggplot2::ggplot(ggplot2::aes(x = stats::reorder(DES_EDO_RES2, n,
                                                FUN = sum),
                             y = n,
                             label = n,
@@ -80,24 +80,24 @@ plot_state_serotype <- function(dataset, year, scale_serotype, x_serotype,
         ggplot2::geom_bar(position = "stack", stat = "identity", color="white") +
         ggplot2::coord_flip() +
         ggplot2::ylab("") + ggplot2::xlab("") +
-        ggplot2::geom_text(position = position_stack(vjust = 0.5), size = 2, alpha = 0.5) + ####
+        ggplot2::geom_text(position = ggplot2::position_stack(vjust = 0.5), size = 2, alpha = 0.5) + ####
         ggplot2::scale_fill_brewer("", palette = "YlOrRd") +
         ggplot2::theme_classic()  +
         ggplot2::theme(legend.position = c(0.9,0.3)) +  ####
-        ggplot2::theme(legend.text = element_text(size = 10, face = "bold")) +
+        ggplot2::theme(legend.text = ggplot2::element_text(size = 10, face = "bold")) +
         ggplot2::theme(legend.justification = c(1,0))  +
-        ggplot2::theme(axis.text.x = element_text(size = 8)) + ## EDO TEXT
-        ggplot2::theme(axis.text.y = element_text(size = 6)) +
-        ggplot2::theme(axis.title.x = element_text(size = 14)) +
-        ggplot2::theme(axis.title.y = element_text(size = 20)) +
-        ggplot2::theme(strip.text = element_text(size = 20)) +
-        ggplot2::theme(legend.background = element_rect(fill="transparent"),
-                       panel.background = element_rect(fill = "transparent"),
-                       plot.background = element_rect(fill = "transparent", color = NA)) +
-        ggplot2::theme(legend.key = element_rect(colour = NA, fill = NA))
+        ggplot2::theme(axis.text.x = ggplot2::element_text(size = 8)) + ## EDO TEXT
+        ggplot2::theme(axis.text.y = ggplot2::element_text(size = 6)) +
+        ggplot2::theme(axis.title.x = ggplot2::element_text(size = 14)) +
+        ggplot2::theme(axis.title.y = ggplot2::element_text(size = 20)) +
+        ggplot2::theme(strip.text = ggplot2::element_text(size = 20)) +
+        ggplot2::theme(legend.background = ggplot2::element_rect(fill="transparent"),
+                       panel.background = ggplot2::element_rect(fill = "transparent"),
+                       plot.background = ggplot2::element_rect(fill = "transparent", color = NA)) +
+        ggplot2::theme(legend.key = ggplot2::element_rect(colour = NA, fill = NA))
 
     ser <- ser + ggplot2::ggtitle(label = "Serotipos por Estado") + ####
-        ggplot2::theme(plot.title = element_text(color="black",
+        ggplot2::theme(plot.title = ggplot2::element_text(color="black",
                                                  size= 12,  ####
                                                  face="bold.italic"))
 
