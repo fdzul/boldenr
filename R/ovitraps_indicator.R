@@ -110,9 +110,9 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
             ggplot2::theme_linedraw() +
             ggplot2::scale_y_continuous(sec.axis = ggplot2::sec_axis(~.*0.25,
                                                    name = "Porcentaje de Ovitrampas Positivas (Barras)")) +
-            ggplot2::theme(axis.title.y = element_text(color = "darkred",
+            ggplot2::theme(axis.title.y = ggplot2::element_text(color = "darkred",
                                               size=13),
-                  axis.title.y.right = element_text(color = "gray50",
+                           axis.title.y.right = ggplot2::element_text(color = "gray50",
                                                     size=13)) +
             ggplot2::ylab("Numero Promedio de Ovitrampas (Líneas)") +
             ggplot2::xlab("Semanas Epidemiológicas")
@@ -142,7 +142,7 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
             ggplot2::scale_x_continuous(limits = c(min(y$Semana.Epidemiologica),
                                           max(y$Semana.Epidemiologica)),
                                breaks = seq(from = 0,to = max(y$Semana.Epidemiologica), by = 2)) +
-            ggplot2::scale_y_continuous(sec.axis = sec_axis(~.*0.25,
+            ggplot2::scale_y_continuous(sec.axis = ggplot2::sec_axis(~.*0.25,
                                                    name = "Porcentaje de Ovitrampas Positivas (Barras)")) +
             ggplot2::theme_linedraw() +
             ggplot2::ylab("Numero Promedio de Ovitrampas (Líneas)") +
