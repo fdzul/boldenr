@@ -109,7 +109,7 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                             allowEscapes = TRUE,
                             header = TRUE,
                             skipNul = TRUE,
-                            fileEncoding = "UCS-2LE",
+                            fileEncoding = "latin1",
                             colClasses = c(rep("character", 10),
                                            "integer", "integer","character",
                                            rep("integer", 3),
@@ -122,6 +122,7 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
         x$Jurisdiccion <- stringr::str_trim(x$Jurisdiccion, side = "both")
+        names(x)[28] <- "Tipo.de.Nebulizacion"
         x
     } else if("RociadoAcaso" == inf){
         l_files <- purrr::map(list.dirs(path = path,
