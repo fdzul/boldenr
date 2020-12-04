@@ -13,7 +13,7 @@
 #'
 #' @return
 #' @export
-#' @import sf, rlang, ggplot2
+#' @import
 #'
 #' @examples
 action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
