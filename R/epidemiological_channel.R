@@ -201,17 +201,17 @@ epidemiological_channel <- function(x, edo, mun = NULL, state, scale_case, z,
                                         to = 52,
                                         by = 2),
                            limits = c(1,52)) +
-        theme_classic() +
+        ggplot2::theme_classic() +
         if(max(x$q75) > max(z1$n)){
-            scale_y_continuous(breaks = seq(from = 0,
+            ggplot2::scale_y_continuous(breaks = seq(from = 0,
                                             to = max(x$q75),
                                             by = scale_case))
         } else if (max(z1$n) > max(x$q75)) {
-            scale_y_continuous(breaks = seq(from = 0,
+            ggplot2::scale_y_continuous(breaks = seq(from = 0,
                                             to = max(z1$n),
                                             by = scale_case))
         } else {
-            scale_y_continuous(breaks = seq(from = 0,
+            ggplot2::scale_y_continuous(breaks = seq(from = 0,
                                             to = max(z2$n),
                                             by = scale_case))
         }
