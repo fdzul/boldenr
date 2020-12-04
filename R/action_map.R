@@ -15,7 +15,7 @@
 #' @export
 #'
 #'
-#' @examples
+#' @examples 1+1
 action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
     if(loc == "Rinconada") {
         z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in%
