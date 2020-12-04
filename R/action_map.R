@@ -22,8 +22,7 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
                                               MUNICIPIO == 134 &
                                               LOCALIDAD == 3) %>%
             dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
-            dplyr::mutate(Municipio = rep(loc, times = dplyr::n()))
-
+            dplyr::mutate(Municipio = rep(x = loc, times = dplyr::n()))
     } else if(loc == "Veracruz"){
         z <- ver_blocks %>%
             dplyr::filter(MUNICIPIO %in% cve_mpo, LOCALIDAD == 1) %>%
