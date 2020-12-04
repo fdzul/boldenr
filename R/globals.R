@@ -14,4 +14,4 @@ utils::globalVariables(c('%>%', "ver_blocks", "MUNICIPIO", "LOCALIDAD",
                          "Porcentaje", "Promedio", "SEM", "Sector", "Seguridad", "Semana_Epidemiologica",
                          "Tipo.de.Operativo", "VEC_EST",
                          "q25", "q50", "q75", "risk",  "sex",  "tab_sem", "x",
-                         "age_class", "count_ok", "huevos"))
+                         "age_class", "count_ok", "huevos", "Tipo.de.Nebulizacion"))
