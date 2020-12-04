@@ -17,9 +17,9 @@
 #' @examples 1+1
 tb_ulv <- function(x, jur = NULL, mun, coldfog){
     if(coldfog == TRUE){
-        x <- x %>% dplyr::filter(Tipo.de.Nebulización == "Nebulización UBV")
+        x <- x %>% dplyr::filter(Tipo.de.Nebulizacion == "Nebulización UBV")
     } else {
-        x <- x %>% dplyr::filter(Tipo.de.Nebulización == "Termonebulización")
+        x <- x %>% dplyr::filter(Tipo.de.Nebulizacion == "Termonebulización")
     }
 
     if(TRUE == mun){
