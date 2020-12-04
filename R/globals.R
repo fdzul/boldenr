@@ -13,4 +13,6 @@ utils::globalVariables(c('%>%', "ver_blocks", "MUNICIPIO", "LOCALIDAD",
                          "ESTATUS_CASO", "Exito", "FEC_INGRESO", "Hectareas.trabajadas", "Hect�reas
                          Trabajadas hasta la Semana", "IDE_SEX", "Indicador", "Insecticida.consumido",
                          "Porcentaje", "Promedio", "SEM", "Sector", "Seguridad", "Semana_Epidemiologica",
-                         "Tipo.de.Operativo", "VEC_EST"))
+                         "Tipo.de.Operativo", "VEC_EST",
+                         "q25", "q50", "q75", "risk",  "sex",  "tab_sem", "x",
+                         "age_class", "count_ok", "huevos"))
