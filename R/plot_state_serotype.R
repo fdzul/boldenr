@@ -1,6 +1,6 @@
 #' Plot the dengue cases by state and serotype
 #'
-#' @param dataset is the dataset of sinave \link{http://vectores.sinave.gob.mx/}.
+#' @param dataset is the dataset of \href{**SINAVE**}{http://vectores.sinave.gob.mx/}.
 #' @param year is the year of dataset.
 #' @param scale_serotype is the scale of the dengue serotype plot.
 #' @param x_serotype The x location of the dengue serotype plot. Sea also cowplot::draw_plot?.
