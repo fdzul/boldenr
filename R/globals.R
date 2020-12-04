@@ -10,8 +10,10 @@ utils::globalVariables(c('%>%', "ver_blocks", "MUNICIPIO", "LOCALIDAD",
                          "ANO", "Alerta", "CVE_EDO_RES", "CVE_ENT", "CVE_MPO_RES", "DENGUE_SER_TRIPLEX",
                          "DES_DIAG_FINAL", "DES_DIAG_PROBABLE", "DES_EDO.x", "DES_EDO_RES", "DES_EDO_RES2",
                          "DES_INS_UNIDAD", "DES_JUR", "DES_JUR_RES", "DES_LOC_RES", "DES_MPO.x", "DES_MPO_RES",
-                         "ESTATUS_CASO", "Exito", "FEC_INGRESO", "Hectareas.trabajadas", "Hect�reas Trabajadas hasta la Semana", "IDE_SEX", "Indicador", "Insecticida.consumido",
+                         "ESTATUS_CASO", "Exito", "FEC_INGRESO", "Hectareas.trabajadas",
+                         "IDE_SEX", "Indicador", "Insecticida.consumido",
                          "Porcentaje", "Promedio", "SEM", "Sector", "Seguridad", "Semana_Epidemiologica",
                          "Tipo.de.Operativo", "VEC_EST",
                          "q25", "q50", "q75", "risk",  "sex",  "tab_sem", "x",
-                         "age_class", "count_ok", "huevos", "Tipo.de.Nebulizacion"))
+                         "age_class", "count_ok", "huevos", "Tipo.de.Nebulizacion",
+                         'Ha Trabajadas hasta la Semana', "Ha Trabajadas hasta la Semana"))
