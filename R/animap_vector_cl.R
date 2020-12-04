@@ -14,7 +14,6 @@
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #' @return a gif file of animation.
 #' @export
-#' @importFrom magrittr %>%
 #'
 #' @seealso \link[tmap]{tmap_animation}
 #'
