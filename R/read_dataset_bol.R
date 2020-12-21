@@ -31,8 +31,8 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                            "DES_JUR_RES", "CVE_EDO_RES", "DES_EDO_RES",
                            "ESTATUS_CASO", "CVE_DIAG_PROBABLE", "DES_DIAG_PROBABLE", "DES_DIAG_FINAL",
                            "FEC_INI_SIGNOS_SINT", "ANO", "SEM",
-                           "RESULTADO_NS1", "RESULTADO_IGM", "RESULTADO_IGG",
-                           "RESULTADO_PCR", "RESULTADO_IGMC", "RESULTADO_MAC",
+                           #"RESULTADO_NS1", "RESULTADO_IGM", "RESULTADO_IGG",
+                           #"RESULTADO_PCR", "RESULTADO_IGMC", "RESULTADO_MAC",
                            "MANEJO",
                            "DES_INS_UNIDAD", "DENGUE_SER_TRIPLEX","FEC_INGRESO")
 

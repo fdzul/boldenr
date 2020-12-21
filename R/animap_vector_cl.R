@@ -5,7 +5,7 @@
 #' @param path is the directory of the larvae control file.
 #' @param locality is the locality target.
 #' @param path_loc is the directory of shepefile dataset for limit locality.
-#' @param vel is the delay time between images. See also \link[tmap]{tmap_animation} and \link[tmap]{fps}
+#' @param vel is the delay time between images. See also \link[tmap]{tmap_animation}.
 #' @param dir is the directory where the animation will be saved.
 #' @param name is the name of the gif file.
 #' @param x_leg is the x position of legend.
@@ -36,7 +36,7 @@ animap_vector_cl <- function(path, locality, path_loc, vel, dir, name, x_leg, y_
                            values_from = Cobertura.en.Manzana,
                            values_fn = mean)
 
-    # Step 2.1 load the loclaity dataset of inegi ####
+    # Step 2.1 load the locality dataset of inegi ####
     z <- sf::st_read(path_loc, quiet = TRUE)
     Encoding(z$NOMGEO) <- "latin1"
     z <- z %>%
