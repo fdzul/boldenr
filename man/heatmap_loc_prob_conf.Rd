@@ -59,7 +59,7 @@ xxxxx
 \seealso{
 \link[boldenr]{epidemiological_channel}
 
-\link[superhead]{superheat}
+\link[superheat]{superheat}
 }
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}

@@ -25,12 +25,13 @@ Imports:
     formattable,
     lubridate,
     purrr,
-    rgeomex,
     rlang,
-    similiars,
     stringr,
     superheat,
     tidyr,
     tmap,
     viridis,
     viridisLite
+Remotes: 
+    fdzul/rgeomex,
+    davidsjoberg/similiars
