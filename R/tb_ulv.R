@@ -12,6 +12,7 @@
 #' @return a table.
 #'
 #' @export
+#' @import formattable
 #'
 #'
 #' @examples 1+1
