@@ -10,10 +10,7 @@
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
 #' @return a dataframe
 #' @export
-#' @import utils
-#' @importFrom stringr str_subset
-#' @importFrom data.table fread
-#' @importFrom purrr map_dfr
+#'
 #'
 #' @examples 1+1
 read_etv_data <- function(x, etv, year, arbovirosis){

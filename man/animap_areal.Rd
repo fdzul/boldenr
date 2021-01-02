@@ -9,7 +9,7 @@ animap_areal(
   name,
   dir,
   country,
-  breaks = NULLL,
+  breaks = NULL,
   vel,
   save,
   cve_edo = NULL,

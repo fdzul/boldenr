@@ -23,7 +23,7 @@
 #' @details \link[tmap]{tmap_animation}.
 #'
 #' @examples
-animap_areal <- function(data, name, dir, country, breaks = NULLL,
+animap_areal <- function(data, name, dir, country, breaks = NULL,
                          vel,save,
                          cve_edo = NULL, dot = NULL, pal = NULL){
 
