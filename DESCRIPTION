@@ -30,6 +30,8 @@ Imports:
     superheat,
     tidyr,
     tmap,
+    rgeomex,
+    similiars,
     viridis,
     viridisLite
 Remotes: 
