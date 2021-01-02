@@ -1,4 +1,4 @@
-# animap_areal
+# Animap_areal
 #
 # Animated map areal of dengue cases by municipality
 #'
