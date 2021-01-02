@@ -1,6 +1,6 @@
-#' animap_areal
-#'
-#' Animated map areal of dengue cases by municipality
+# animap_areal
+#
+# Animated map areal of dengue cases by municipality
 #'
 #' @param data is dengue dataset.
 #' @param name is the name of the gif file.
