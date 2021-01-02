@@ -10,7 +10,6 @@
 #' @return a formattable object.
 #'
 #' @export
-#' @import formattable
 #'
 #'
 #' @examples 1+1

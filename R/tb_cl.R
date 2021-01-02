@@ -10,7 +10,6 @@
 #'
 #' @export
 #'
-#' @import formattable
 #' @examples 1+1
 #'
 #' @references xxxxx
