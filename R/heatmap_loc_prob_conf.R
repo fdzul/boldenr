@@ -23,7 +23,7 @@
 #' @references xxxxx
 #'
 #' @seealso \link[boldenr]{epidemiological_channel}
-#' @seealso \link[superhead]{superheat}
+#' @seealso \link[superheat]{superheat}
 #'
 #' @details the heatmap is based in the package superheat and the function \link[superheat]{superheat}
 heatmap_loc_prob_conf <- function(x, probable,

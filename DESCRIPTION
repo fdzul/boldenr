@@ -17,4 +17,20 @@ LazyData: true
 RoxygenNote: 7.1.1
 Imports:
     dplyr,
-    sf
+    sf,
+    ggplot2,
+    cowplot,
+    data.table,
+    forcats,
+    formattable,
+    lubridate,
+    purrr,
+    rgeomex,
+    rlang,
+    similiars,
+    stringr,
+    superheat,
+    tidyr,
+    tmap,
+    viridis,
+    viridisLite
