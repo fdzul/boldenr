@@ -48,7 +48,7 @@ den_heatmap <- function(x, year, breaks){
 
     y$edo <- factor(y$edo, levels = z$edo)
 
-    library(ggplot2)
+
     ggplot2::ggplot(y, ggplot2::aes(y = edo,
                   x = week,
                   fill = n,
