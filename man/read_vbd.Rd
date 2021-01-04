@@ -4,14 +4,12 @@
 \alias{read_vbd}
 \title{read_vbd}
 \usage{
-read_vbd(x, vbd, year, arbovirus)
+read_vbd(x, vbd, arbovirus)
 }
 \arguments{
 \item{x}{is the directory where the files are located.}
 
 \item{vbd}{is the parameter for define the vector-borne diseases.}
-
-\item{year}{is the year dataset.}
 
 \item{arbovirus}{is a logical value for define the group of vector-borne diseases, if is TRUE, the define DENV, CHIKV & ZIKV, else for other etvs.}
 }
