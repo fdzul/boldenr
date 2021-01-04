@@ -67,13 +67,23 @@ static_map_areal <- function(x, breaks, week_start,week_end, country, cve_edo = 
         ggplot2::scale_fill_viridis_c("Casos",
                                       direction = -1,
                                       option = "B",
-                                      breaks  = c(1, seq(from = 0, to = max(y$n), by = breaks))) +
+                                      breaks  = c(1, seq(from = 0, to = max(y$n), by = breaks)),
+                                      guide =  ggplot2::guide_legend(title.position = "top",
+                                                                     direction = "horizontal",
+                                                                     label.position = "bottom",
+                                                                     nrow = 1,
+                                                                     label.hjust = 0.5,
+                                                                     label.vjust = 1,
+                                                                     label.theme = ggplot2::element_text(angle = 0))) +
         ggplot2::geom_sf(data = z,
                          fill = NA,
                          color = "black",
                          size = 0.5) +
         ggplot2::theme_void() +
-        ggplot2::theme(legend.position = "bottom") +
+        ggplot2::theme(legend.position = "bottom",
+                       legend.title = ggplot2::element_text(colour = "gray40",
+                                                            face = "bold",
+                                                            size = 12)) +
         ggplot2::theme(legend.key.size = ggplot2::unit(.4, "cm"),
                        legend.key.width = ggplot2::unit(1.5,"cm"),
                        legend.margin= ggplot2::margin(0,0,0,0),
