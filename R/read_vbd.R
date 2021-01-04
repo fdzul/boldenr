@@ -16,7 +16,7 @@
 #' @importFrom purrr map_dfr
 #'
 #' @examples 1+1
-read_etv_data <- function(x, vbd, year, arbovirus){
+read_vbd <- function(x, vbd, year, arbovirus){
 
     # Step 1 create the list directories ####
     l_files <- list.files(x,
