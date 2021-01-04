@@ -49,25 +49,25 @@ den_heatmap <- function(x, year, breaks){
     y$edo <- factor(y$edo, levels = z$edo)
 
     library(ggplot2)
-    ggplot(y, aes(y = edo,
+    ggplot2::ggplot(y, ggplot2::aes(y = edo,
                   x = week,
                   fill = n,
                   label = n)) +
-        geom_raster(alpha = 1)+
-        scale_fill_viridis_c(breaks  = c(0, seq(from = 0, to = max(y$n), by = breaks))) +
-        geom_text(col = ifelse(y$n >= 120, "black","gray"),
+        ggplot2::geom_raster(alpha = 1)+
+        ggplot2::scale_fill_viridis_c(breaks  = c(0, seq(from = 0, to = max(y$n), by = breaks))) +
+        ggplot2::geom_text(col = ifelse(y$n >= 120, "black","gray"),
                   size = 1, alpha = 0.4) +
         #theme_minimal()+
         cowplot::theme_cowplot() +
-        ylab("") +
-        xlab("") +
-        labs(fill = "")+
-        theme(axis.text.y = element_text(face = "bold", size = 9),
-              axis.text.x = element_text(size = 6)) +
-        scale_x_continuous(breaks = c(1:max(unique(y$week)))) +
-        theme(legend.position = "bottom",
+        ggplot2::ylab("") +
+        ggplot2::xlab("") +
+        ggplot2::labs(fill = "")+
+        ggplot2::theme(axis.text.y = ggplot2::element_text(face = "bold", size = 9),
+              axis.text.x = ggplot2::element_text(size = 6)) +
+        ggplot2::scale_x_continuous(breaks = c(1:max(unique(y$week)))) +
+        ggplot2::theme(legend.position = "bottom",
               legend.box.just = "center") +
-        theme(legend.key.size = unit(.4, "cm"),
+        ggplot2::theme(legend.key.size = unit(.4, "cm"),
               legend.key.width = unit(2,"cm"),
               legend.margin=margin(0,0,0,0),
               legend.box.margin=margin(-20,0,0,0))
