@@ -69,6 +69,6 @@ den_heatmap <- function(x, year, breaks){
               legend.box.just = "center") +
         ggplot2::theme(legend.key.size = unit(.4, "cm"),
               legend.key.width = unit(2,"cm"),
-              legend.margin=margin(0,0,0,0),
-              legend.box.margin=margin(-20,0,0,0))
+              legend.margin=  ggplot2::margin(0,0,0,0),
+              legend.box.margin=  ggplot2::margin(-20,0,0,0))
 }
