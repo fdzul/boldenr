@@ -4,7 +4,6 @@
 #'
 #' @param x is the directory where the files are located.
 #' @param vbd is the parameter for define the vector-borne diseases.
-#' @param year is the year dataset.
 #' @param arbovirus is a logical value for define the group of vector-borne diseases, if is TRUE, the define DENV, CHIKV & ZIKV, else for other etvs.
 #'
 #' @author Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
@@ -16,7 +15,7 @@
 #' @importFrom purrr map_dfr
 #'
 #' @examples 1+1
-read_vbd <- function(x, vbd, year, arbovirus){
+read_vbd <- function(x, vbd, arbovirus){
 
     # Step 1 create the list directories ####
     l_files <- list.files(x,
