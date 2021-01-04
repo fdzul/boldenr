@@ -67,7 +67,7 @@ static_map_areal <- function(x, breaks, week_start,week_end, country, cve_edo = 
         ggplot2::scale_fill_viridis_c("Casos",
                                       direction = -1,
                                       option = "B",
-                                      breaks  = c(seq(from = 1, to = max(y$n), by = breaks))) +
+                                      breaks  = c(1, seq(from = 0, to = max(y$n), by = breaks))) +
         ggplot2::geom_sf(data = z,
                          fill = NA,
                          color = "black",
