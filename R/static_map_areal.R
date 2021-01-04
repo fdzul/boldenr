@@ -84,8 +84,8 @@ static_map_areal <- function(x, breaks, week_start,week_end, country, cve_edo = 
                        legend.title = ggplot2::element_text(colour = "gray40",
                                                             face = "bold",
                                                             size = 12)) +
-        ggplot2::theme(legend.key.size = ggplot2::unit(.4, "cm"),
-                       legend.key.width = ggplot2::unit(1.5,"cm"),
+        ggplot2::theme(legend.key.size = ggplot2::unit(.2, "cm"),
+                       legend.key.width = ggplot2::unit(1,"cm"),
                        legend.margin= ggplot2::margin(0,0,0,0),
                        legend.box.margin= ggplot2::margin(-20,0,0,0))
 }
