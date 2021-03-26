@@ -114,7 +114,7 @@ ovitraps_indicator <- function(x, nom_loc = NULL, all){
                                               size=13),
                            axis.title.y.right = ggplot2::element_text(color = "gray50",
                                                     size=13)) +
-            ggplot2::ylab("Numero Promedio de Ovitrampas (Líneas)") +
+            ggplot2::ylab("Numero Promedio de Huevos por Ovitrampa (Líneas)") +
             ggplot2::xlab("Semanas Epidemiológicas")
     } else {
         ggplot2::ggplot(data = y[y$Indicador == "Ovitrampa",],
