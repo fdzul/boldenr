@@ -65,7 +65,7 @@ plot_state_serotype <- function(dataset, year, scale_serotype, x_serotype,
                        legend.text = ggplot2::element_text(face = "bold", size = 12))
 
     ### serotipos
-    ser <- x %>%
+    ser <- y %>%
         dplyr::filter(ESTATUS_CASO == 2 &
                           ANO == year &
                           DENGUE_SER_TRIPLEX %in% c(1:4)) %>%
