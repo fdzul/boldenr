@@ -11,4 +11,4 @@
 #'   \item{q75}{percentil 75.}
 #'   ...
 #' }
-"den_epichannel"
+"dendata_epichannel"
