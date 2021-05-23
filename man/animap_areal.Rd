@@ -6,6 +6,7 @@
 \usage{
 animap_areal(
   data,
+  year,
   name,
   dir,
   country,
