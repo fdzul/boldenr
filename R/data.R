@@ -1,6 +1,6 @@
 #' Dengue cases by states for epidemiological channel.
 #'
-#' A dataset containing  the 25, 50, & 75 percentil of dengue cases.
+#' is the dataset that contains the 25th, 50th and 75th percentiles of dengue cases by state.
 #'
 #' @format A df object with 1545 rows and 5 variables:
 #' \describe{
