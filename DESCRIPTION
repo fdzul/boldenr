@@ -31,11 +31,9 @@ Imports:
     tidyr,
     tmap,
     rgeomex,
-    similiars,
     viridis,
     viridisLite
 Remotes: 
-    fdzul/rgeomex,
-    davidsjoberg/similiars
+    fdzul/rgeomex
 Depends: 
     R (>= 2.10)
