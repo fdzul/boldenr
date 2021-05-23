@@ -26,7 +26,7 @@ animap_vector_cl <- function(path, locality, path_loc, vel, dir, name, x_leg, y_
     x  <- boldenr::read_dataset_bol(path = path,
                                     dataset = "vectores",
                                     inf = "Control") %>%
-        dplyr::filter(Localidad %in% c(similiars::find_most_similar_string(locality, unique(Localidad)))) %>%
+        dplyr::filter(Localidad %in% c(rgeomex::find_most_similar_string(locality, unique(Localidad)))) %>%
         dplyr::filter(!Semana.Epidemiologica %in% c(lubridate::epiweek(Sys.Date()))) %>%
         dplyr::filter(Tipo.de.Operativo %in% c("Barrido", "Focalizado")) %>%
         dplyr::mutate(sec_manz = paste(as.numeric(sector), as.numeric(Manzana), sep = "")) %>%
@@ -40,7 +40,7 @@ animap_vector_cl <- function(path, locality, path_loc, vel, dir, name, x_leg, y_
     z <- sf::st_read(path_loc, quiet = TRUE)
     Encoding(z$NOMGEO) <- "latin1"
     z <- z %>%
-        dplyr::filter(NOMGEO %in% c(similiars::find_most_similar_string(locality, unique(NOMGEO))) &
+        dplyr::filter(NOMGEO %in% c(rgeomex::find_most_similar_string(locality, unique(NOMGEO))) &
                           AMBITO %in% c("Urbana")) %>%
         sf::st_transform(crs = 4326) %>%
         sf::st_union()
