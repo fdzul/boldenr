@@ -23,13 +23,13 @@
 #' @details \link[tmap]{tmap_animation}.
 #'
 #' @examples
-animap_areal <- function(data, name, dir, country, breaks = NULL,
+animap_areal <- function(data, year, name, dir, country, breaks = NULL,
                          vel,save,
                          cve_edo = NULL, dot = NULL, pal = NULL){
 
     # Step 1. aggregate the cases by municipality and week ###
     x <- data %>%
-        dplyr::filter(ANO == 2020) %>%
+        dplyr::filter(ANO %in% c(year)) %>%
         dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                           "OTROS PAISES DE LATINOAMERICA",
                                           "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
