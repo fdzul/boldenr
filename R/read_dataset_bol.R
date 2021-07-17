@@ -77,13 +77,13 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                                         full.names = TRUE),
                               list.files, pattern = "txt", full.names = TRUE)
         l <- unlist(purrr::map(l_files, stringr::str_subset, c(inf)))
-        col_class <- c(rep("character", 5), "integer",
-                       rep("character", 5), "integer",
+        col_class <- c(rep("character", 7),
+                       rep("character", 4), "integer",
                        "character", "integer", "integer", "numeric",
                        "character", "integer", "integer",
                        rep("character", 3), rep("integer", 11),
                        "numeric", rep("character", 5),
-                       rep("character", 4), "logical", "integer")
+                       rep("character", 4), "character", "character")
 
         x <- purrr::map_dfr(l, read.table,
                             sep = "\t",
