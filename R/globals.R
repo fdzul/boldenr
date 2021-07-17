@@ -17,4 +17,4 @@ utils::globalVariables(c('%>%', "ver_blocks", "MUNICIPIO", "LOCALIDAD",
                          "q25", "q50", "q75", "risk",  "sex",  "tab_sem", "x",
                          "age_class", "count_ok", "huevos", "Tipo.de.Nebulizacion",
                          'Ha Trabajadas hasta la Semana', "Ha Trabajadas hasta la Semana",
-                         "NULL", "CVE_MUN", "CVEGEO"))
+                         "NULL", "CVE_MUN", "CVEGEO", "edo", "Entidad", "mpo"))
