@@ -117,8 +117,9 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                                            "character", "character",
                                            rep("integer", 7),
                                            rep("character", 4), "NULL", "NULL")) %>%
-            tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
-            tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
+            tidyr::separate(Entidad, into = c("cve_ent", "Entidad"), extra = "merge") %>%
+            tidyr::separate(Municipio, into = c("cve_mpo", "Municipio"), extra = "merge") %>%
+            tidyr::separate(Localidad, into = c("cve_loc","Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
@@ -147,8 +148,9 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                                            "character" ),
                             skipNul = TRUE,
                             fileEncoding = "UTF-16") %>%
-            tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
-            tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
+            tidyr::separate(Entidad, into = c("cve_ent", "Entidad"), extra = "merge") %>%
+            tidyr::separate(Municipio, into = c("cve_mpo", "Municipio"), extra = "merge") %>%
+            tidyr::separate(Localidad, into = c("cve_loc","Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
@@ -175,8 +177,9 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                                            "character", "character"),
                             skipNul = TRUE,
                             fileEncoding = "UTF-16") %>%
-            tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
-            tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
+            tidyr::separate(Entidad, into = c("cve_ent", "Entidad"), extra = "merge") %>%
+            tidyr::separate(Municipio, into = c("cve_mpo", "Municipio"), extra = "merge") %>%
+            tidyr::separate(Localidad, into = c("cve_loc","Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
@@ -194,8 +197,9 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                             header = TRUE,
                             skipNul = TRUE,
                             fileEncoding = "UTF-16") %>%
-            tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
-            tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
+            tidyr::separate(Entidad, into = c("cve_ent", "Entidad"), extra = "merge") %>%
+            tidyr::separate(Municipio, into = c("cve_mpo", "Municipio"), extra = "merge") %>%
+            tidyr::separate(Localidad, into = c("cve_loc","Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
@@ -223,8 +227,9 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                             header = TRUE,
                             skipNul = TRUE,
                             fileEncoding = "UTF-16") %>%
-            tidyr::separate(Municipio, into = c(NA, "Municipio"), extra = "merge") %>%
-            tidyr::separate(Localidad, into = c(NA,"Localidad"), extra = "merge") %>%
+            tidyr::separate(Entidad, into = c("cve_ent", "Entidad"), extra = "merge") %>%
+            tidyr::separate(Municipio, into = c("cve_mpo", "Municipio"), extra = "merge") %>%
+            tidyr::separate(Localidad, into = c("cve_loc","Localidad"), extra = "merge") %>%
             tidyr::separate(Jurisdiccion, into = c(NA, "Jurisdiccion"), extra = "merge") %>%
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
