@@ -116,7 +116,9 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
                                            rep("integer", 3),
                                            "character", "character",
                                            rep("integer", 7),
-                                           rep("character", 4), "NULL", "NULL")) %>%
+                                           rep("character", 4), "NULL", "NULL"))
+        names(x)[1] <- c("Entidad")
+        x <- x %>%
             tidyr::separate(Entidad, into = c("cve_ent", "Entidad"), extra = "merge") %>%
             tidyr::separate(Municipio, into = c("cve_mpo", "Municipio"), extra = "merge") %>%
             tidyr::separate(Localidad, into = c("cve_loc","Localidad"), extra = "merge") %>%
@@ -124,7 +126,7 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
             dplyr::mutate(Localidad = stringr::str_to_title(Localidad))
         x$Municipio <- stringr::str_trim(x$Municipio, side = "both")
         x$Jurisdiccion <- stringr::str_trim(x$Jurisdiccion, side = "both")
-        names(x)[28] <- "Tipo.de.Nebulizacion"
+        names(x)[31] <- "Tipo.de.Nebulizacion"
         x
     } else if("RociadoAcaso" == inf){
         l_files <- purrr::map(list.dirs(path = path,
