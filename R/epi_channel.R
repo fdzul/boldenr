@@ -32,43 +32,43 @@ epi_channel <- function(x, y,
                         x_exito, y_exito){
 
     if(is.null(jur)){
-        x <- x %>%
+        x <- x |>
             dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                  pattern = "  ",
-                                                                 repl = " ")) %>%
+                                                                 repl = " ")) |>
             dplyr::filter(DES_EDO_RES %in% c(edo))
 
-        z1 <- y %>%
+        z1 <- y |>
             dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                               "OTROS PAISES DE LATINOAMERICA",
-                                              "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                              "ESTADOS UNIDOS DE NORTEAMERICA")) |>
             dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                 "DENGUE GRAVE",
                                                 "DENGUE NO GRAVE",
                                                 "FIEBRE HEMORRAGICA POR DENGUE",
-                                                "FIEBRE POR DENGUE")) %>%
+                                                "FIEBRE POR DENGUE")) |>
             dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                  pattern = "  ",
-                                                                 repl = " ")) %>%
-            dplyr::filter(DES_EDO_RES == edo) %>%
-            dplyr::filter(ANO == year1) %>%
-            dplyr::group_by(SEM) %>%
+                                                                 repl = " ")) |>
+            dplyr::filter(DES_EDO_RES == edo) |>
+            dplyr::filter(ANO == year1) |>
+            dplyr::group_by(SEM) |>
             dplyr::summarise(n = dplyr::n(), .groups = "drop")
-        z2 <- y %>%
+        z2 <- y |>
             dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                               "OTROS PAISES DE LATINOAMERICA",
-                                              "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                              "ESTADOS UNIDOS DE NORTEAMERICA")) |>
             dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                 "DENGUE GRAVE",
                                                 "DENGUE NO GRAVE",
                                                 "FIEBRE HEMORRAGICA POR DENGUE",
-                                                "FIEBRE POR DENGUE")) %>%
+                                                "FIEBRE POR DENGUE")) |>
             dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                  pattern = "  ",
-                                                                 repl = " ")) %>%
-            dplyr::filter(DES_EDO_RES == edo) %>%
-            dplyr::filter(ANO == year2) %>%
-            dplyr::group_by(SEM) %>%
+                                                                 repl = " ")) |>
+            dplyr::filter(DES_EDO_RES == edo) |>
+            dplyr::filter(ANO == year2) |>
+            dplyr::group_by(SEM) |>
             dplyr::summarise(n = dplyr::n(), .groups = "drop")
 
         ggplot2::ggplot(data = x,
@@ -122,7 +122,7 @@ epi_channel <- function(x, y,
             ggplot2::geom_line(data = z1,
                                ggplot2::aes(x = SEM, y = n),
                                alpha = 0.5,
-                               size = 1.5,
+                               linewidth = 1.5,
                                colour =  "grey") +
             ggplot2::geom_point(data = z1,
                                 ggplot2::aes(x = SEM, y = n),
@@ -134,7 +134,7 @@ epi_channel <- function(x, y,
             ggplot2::geom_line(data = z2,
                                ggplot2::aes(x = SEM, y = n),
                                #alpha = 0.5,s
-                               size = 1.5,
+                               linewidth = 1.5,
                                colour =  "black") +
             ggplot2::geom_point(data = z2,
                                 ggplot2::aes(x = SEM, y = n),
@@ -145,162 +145,162 @@ epi_channel <- function(x, y,
                                 stroke = 2)
     } else{
         if(is.null(mpo)){
-            x <- x %>%
+            x <- x |>
                 dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                      pattern = "  ",
                                                                      repl = " "),
                               DES_JUR_RES = stringr::str_replace_all(string = DES_JUR_RES,
                                                                      pattern = "  ",
-                                                                     repl = " ")) %>%
+                                                                     repl = " ")) |>
 
                 dplyr::filter(DES_EDO_RES %in% c(edo) &
                                   DES_JUR_RES %in% c(jur))
 
-            z1 <- y %>%
+            z1 <- y |>
                 dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                                   "OTROS PAISES DE LATINOAMERICA",
-                                                  "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                                  "ESTADOS UNIDOS DE NORTEAMERICA")) |>
                 dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                     "DENGUE GRAVE",
                                                     "DENGUE NO GRAVE",
                                                     "FIEBRE HEMORRAGICA POR DENGUE",
-                                                    "FIEBRE POR DENGUE")) %>%
+                                                    "FIEBRE POR DENGUE")) |>
                 dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                      pattern = "  ",
                                                                      repl = " "),
                               DES_JUR_RES = stringr::str_replace_all(string = DES_JUR_RES,
                                                                      pattern = "  ",
-                                                                     repl = " ")) %>%
+                                                                     repl = " ")) |>
                 dplyr::filter(DES_EDO_RES %in% edo &
-                                  DES_JUR_RES %in% c(jur)) %>%
-                dplyr::filter(ANO == year1) %>%
-                dplyr::group_by(SEM) %>%
+                                  DES_JUR_RES %in% c(jur)) |>
+                dplyr::filter(ANO == year1) |>
+                dplyr::group_by(SEM) |>
                 dplyr::summarise(n = dplyr::n(), .groups = "drop")
-            z2 <- y %>%
+            z2 <- y |>
                 dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                                   "OTROS PAISES DE LATINOAMERICA",
-                                                  "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                                  "ESTADOS UNIDOS DE NORTEAMERICA")) |>
                 dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                     "DENGUE GRAVE",
                                                     "DENGUE NO GRAVE",
                                                     "FIEBRE HEMORRAGICA POR DENGUE",
-                                                    "FIEBRE POR DENGUE")) %>%
+                                                    "FIEBRE POR DENGUE")) |>
                 dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                      pattern = "  ",
                                                                      repl = " "),
                               DES_JUR_RES = stringr::str_replace_all(string = DES_JUR_RES,
                                                                      pattern = "  ",
-                                                                     repl = " ")) %>%
+                                                                     repl = " ")) |>
                 dplyr::filter(DES_EDO_RES %in% edo &
-                                  DES_JUR_RES %in% c(jur)) %>%
-                dplyr::filter(ANO == year2) %>%
-                dplyr::group_by(SEM) %>%
+                                  DES_JUR_RES %in% c(jur)) |>
+                dplyr::filter(ANO == year2) |>
+                dplyr::group_by(SEM) |>
                 dplyr::summarise(n = dplyr::n(), .groups = "drop")
 
         } else {
             if(is.null(loc)){
-                x <- x %>%
+                x <- x |>
                     dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                          pattern = "  ",
                                                                          repl = " "),
                                   DES_MPO_RES = stringr::str_replace_all(string = DES_MPO_RES,
                                                                          pattern = "  ",
-                                                                         repl = " ")) %>%
+                                                                         repl = " ")) |>
 
                     dplyr::filter(DES_EDO_RES %in% c(edo) &
                                       DES_MPO_RES %in% c(mpo))
-                z1 <- y %>%
+                z1 <- y |>
                     dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                                       "OTROS PAISES DE LATINOAMERICA",
-                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) |>
                     dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                         "DENGUE GRAVE",
                                                         "DENGUE NO GRAVE",
                                                         "FIEBRE HEMORRAGICA POR DENGUE",
-                                                        "FIEBRE POR DENGUE")) %>%
+                                                        "FIEBRE POR DENGUE")) |>
                     dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                          pattern = "  ",
                                                                          repl = " "),
                                   DES_MPO_RES = stringr::str_replace_all(string = DES_MPO_RES,
                                                                          pattern = "  ",
-                                                                         repl = " ")) %>%
+                                                                         repl = " ")) |>
                     dplyr::filter(DES_EDO_RES %in% edo &
-                                      DES_MPO_RES %in% c(mpo)) %>%
-                    dplyr::filter(ANO == year1) %>%
-                    dplyr::group_by(SEM) %>%
+                                      DES_MPO_RES %in% c(mpo)) |>
+                    dplyr::filter(ANO == year1) |>
+                    dplyr::group_by(SEM) |>
                     dplyr::summarise(n = dplyr::n(), .groups = "drop")
-                z2 <- y %>%
+                z2 <- y |>
                     dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                                       "OTROS PAISES DE LATINOAMERICA",
-                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) |>
                     dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                         "DENGUE GRAVE",
                                                         "DENGUE NO GRAVE",
                                                         "FIEBRE HEMORRAGICA POR DENGUE",
-                                                        "FIEBRE POR DENGUE")) %>%
+                                                        "FIEBRE POR DENGUE")) |>
                     dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                          pattern = "  ",
                                                                          repl = " "),
                                   DES_MPO_RES = stringr::str_replace_all(string = DES_MPO_RES,
                                                                          pattern = "  ",
-                                                                         repl = " ")) %>%
+                                                                         repl = " ")) |>
                     dplyr::filter(DES_EDO_RES %in% edo &
-                                      DES_MPO_RES %in% c(mpo)) %>%
-                    dplyr::filter(ANO == year2) %>%
-                    dplyr::group_by(SEM) %>%
+                                      DES_MPO_RES %in% c(mpo)) |>
+                    dplyr::filter(ANO == year2) |>
+                    dplyr::group_by(SEM) |>
                     dplyr::summarise(n = dplyr::n(), .groups = "drop")
 
             } else {
-                x <- x %>%
+                x <- x |>
                     dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                          pattern = "  ",
                                                                          repl = " "),
                                   DES_LOC_RES = stringr::str_replace_all(string = DES_LOC_RES,
                                                                          pattern = "  ",
-                                                                         repl = " ")) %>%
+                                                                         repl = " ")) |>
 
                     dplyr::filter(DES_EDO_RES %in% c(edo) &
                                       DES_LOC_RES %in% c(loc))
-                z1 <- y %>%
+                z1 <- y |>
                     dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                                       "OTROS PAISES DE LATINOAMERICA",
-                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) |>
                     dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                         "DENGUE GRAVE",
                                                         "DENGUE NO GRAVE",
                                                         "FIEBRE HEMORRAGICA POR DENGUE",
-                                                        "FIEBRE POR DENGUE")) %>%
+                                                        "FIEBRE POR DENGUE")) |>
                     dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                          pattern = "  ",
                                                                          repl = " "),
                                   DES_LOC_RES = stringr::str_replace_all(string = DES_LOC_RES,
                                                                          pattern = "  ",
-                                                                         repl = " ")) %>%
+                                                                         repl = " ")) |>
                     dplyr::filter(DES_EDO_RES %in% edo &
-                                      DES_LOC_RES %in% c(loc)) %>%
-                    dplyr::filter(ANO == year1) %>%
-                    dplyr::group_by(SEM) %>%
+                                      DES_LOC_RES %in% c(loc)) |>
+                    dplyr::filter(ANO == year1) |>
+                    dplyr::group_by(SEM) |>
                     dplyr::summarise(n = dplyr::n(), .groups = "drop")
 
-                z2 <- y %>%
+                z2 <- y |>
                     dplyr::filter(!DES_EDO_RES %in% c("OTROS PAISES",
                                                       "OTROS PAISES DE LATINOAMERICA",
-                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) %>%
+                                                      "ESTADOS UNIDOS DE NORTEAMERICA")) |>
                     dplyr::filter(DES_DIAG_FINAL %in% c("DENGUE CON SIGNOS DE ALARMA",
                                                         "DENGUE GRAVE",
                                                         "DENGUE NO GRAVE",
                                                         "FIEBRE HEMORRAGICA POR DENGUE",
-                                                        "FIEBRE POR DENGUE")) %>%
+                                                        "FIEBRE POR DENGUE")) |>
                     dplyr::mutate(DES_EDO_RES = stringr::str_replace_all(string = DES_EDO_RES,
                                                                          pattern = "  ",
                                                                          repl = " "),
                                   DES_LOC_RES = stringr::str_replace_all(string = DES_LOC_RES,
                                                                          pattern = "  ",
-                                                                         repl = " ")) %>%
+                                                                         repl = " ")) |>
                     dplyr::filter(DES_EDO_RES %in% edo &
-                                      DES_LOC_RES %in% c(loc)) %>%
-                    dplyr::filter(ANO == year2) %>%
-                    dplyr::group_by(SEM) %>%
+                                      DES_LOC_RES %in% c(loc)) |>
+                    dplyr::filter(ANO == year2) |>
+                    dplyr::group_by(SEM) |>
                     dplyr::summarise(n = dplyr::n(), .groups = "drop")
             }
         }
@@ -356,7 +356,7 @@ epi_channel <- function(x, y,
         ggplot2::geom_line(data = z1,
                            ggplot2::aes(x = SEM, y = n),
                            alpha = 0.5,
-                           size = 1.5,
+                           linewidth = 1.5,
                            colour =  "grey") +
         ggplot2::geom_point(data = z1,
                             ggplot2::aes(x = SEM, y = n),
@@ -368,7 +368,7 @@ epi_channel <- function(x, y,
         ggplot2::geom_line(data = z2,
                            ggplot2::aes(x = SEM, y = n),
                            #alpha = 0.5,s
-                           size = 1.5,
+                           linewidth = 1.5,
                            colour =  "black") +
         ggplot2::geom_point(data = z2,
                             ggplot2::aes(x = SEM, y = n),
