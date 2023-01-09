@@ -24,33 +24,40 @@ read_dataset_bol <- function(path, dataset, inf = NULL){
         l <- list.files(path, full.names = TRUE, pattern = "txt")
         ## Step 2. Make the function
         read_dat <- function(x){
-            vect_cols <- c("IDE_EDA_ANO", "IDE_SEX",
-                           "IDE_CAL", "NUM_EXT", "NUM_INT",
-                           "IDE_COL", "IDE_CP",
-                           "CVE_LOC_RES", "DES_LOC_RES", "CVE_MPO_RES", "DES_MPO_RES",
-                           "DES_JUR_RES", "CVE_EDO_RES", "DES_EDO_RES",
-                           "ESTATUS_CASO", "CVE_DIAG_PROBABLE", "DES_DIAG_PROBABLE", "DES_DIAG_FINAL",
-                           "FEC_INI_SIGNOS_SINT", "ANO", "SEM",
-                           #"RESULTADO_NS1", "RESULTADO_IGM", "RESULTADO_IGG",
-                           #"RESULTADO_PCR", "RESULTADO_IGMC", "RESULTADO_MAC",
-                           "MANEJO",
-                           "DES_INS_UNIDAD", "DENGUE_SER_TRIPLEX","FEC_INGRESO")
+            select_columns <- c("VEC_ID",
+                                "IDE_EDA_ANO", "IDE_SEX",
+                                "IDE_CAL", "NUM_EXT", "NUM_INT",
+                                "IDE_COL", "IDE_CP",
+                                "CVE_LOC_RES", "DES_LOC_RES", "CVE_MPO_RES", "DES_MPO_RES",
+                                "DES_JUR_RES", "CVE_EDO_RES", "DES_EDO_RES",
+                                "ESTATUS_CASO", "CVE_DIAG_PROBABLE", "DES_DIAG_PROBABLE", "DES_DIAG_FINAL",
+                                "FEC_INI_SIGNOS_SINT", "ANO", "SEM",
+                                "MANEJO",
+                                "DES_INS_UNIDAD", "DENGUE_SER_TRIPLEX","FEC_INGRESO")
+            column_type = list(vroom::col_character(),
+                               vroom::col_integer(),vroom::col_integer(),
+                               vroom::col_character(),vroom::col_character(), vroom::col_character(),
+                               vroom::col_character(), vroom::col_character(),
 
-            data.table::fread(x,
-                              header = TRUE,
-                              quote = "",
-                              select = vect_cols,
-                              fill = TRUE,
-                              encoding = "Latin-1")
+                               vroom::col_character(), vroom::col_character(), vroom::col_character(), vroom::col_character(),
+                               vroom::col_character(), vroom::col_character(), vroom::col_character(),
+
+                               vroom::col_integer(),vroom::col_integer(), vroom::col_character(), vroom::col_character(),
+                               vroom::col_date(), vroom::col_integer(), vroom::col_integer(),
+                               vroom::col_integer(), vroom::col_character(), vroom::col_character(), vroom::col_date())
+
+            vroom::vroom(x,
+                         delim = "|",
+                         guess_max = 0,
+                         col_select = select_columns,
+                         col_types = column_type,
+                         locale = readr::locale(encoding = "Latin1"))
         }
+
         ## Step 3. apply the function for each file and row bind
-        # x <- purrr::map(purrr::map(l, read_dat), rbind)
-        rbind(purrr::map_dfr(l[[1]], read_dat),
-              purrr::map_dfr(l[[2]], read_dat),
-              purrr::map_dfr(l[[3]], read_dat),
-              purrr::map_dfr(l[[4]], read_dat),
-              purrr::map_dfr(l[[5]], read_dat),
-              purrr::map_dfr(l[[6]], read_dat))
+        purrr::map_dfr(l, read_dat)
+
+
 
     } else if ("Lecturas" == inf) {
         l_files <- purrr::map(list.dirs(path = path,
