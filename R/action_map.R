@@ -18,15 +18,15 @@
 #' @examples 1+1
 action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
     if(loc == "Rinconada") {
-        z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in%
+        z <- blocks |> dplyr::filter(MUNICIPIO %in%
                                               cve_mpo & LOCALIDAD == 5 |
                                               MUNICIPIO == 134 &
-                                              LOCALIDAD == 3) %>%
-            dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
+                                              LOCALIDAD == 3) |>
+            dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) |>
             dplyr::mutate(Municipio = rep(x = loc, times = dplyr::n()))
     } else if(loc == "Veracruz"){
-        z <- ver_blocks %>%
-            dplyr::filter(MUNICIPIO %in% cve_mpo, LOCALIDAD == 1) %>%
+        z <- blocks |>
+            dplyr::filter(MUNICIPIO %in% cve_mpo, LOCALIDAD == 1) |>
             dplyr::filter(!SECCION == 4228 &
                               !MANZANA %in% c(257, 275, 165,
                                               164, 252, 156,
@@ -34,47 +34,47 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
                                               162, 158, 152,
                                               278, 151, 153,
                                               155, 159, 161,
-                                              154)) %>%
-            dplyr::filter(!SECCION %in% c(585, 267, 266)) %>%
-            dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
+                                              154)) |>
+            dplyr::filter(!SECCION %in% c(585, 267, 266)) |>
+            dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) |>
             dplyr::mutate(Municipio = ifelse(MUNICIPIO == 29,
                                              "Boca del Río",
                                              "Veracruz"))
 
     } else {
-        z <- ver_blocks %>% dplyr::filter(MUNICIPIO %in% c(cve_mpo),
-                                          LOCALIDAD == num_loc) %>%
-            dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) %>%
+        z <- blocks |> dplyr::filter(MUNICIPIO %in% c(cve_mpo),
+                                          LOCALIDAD == num_loc) |>
+            dplyr::mutate(sec_manz = paste(SECCION, MANZANA, sep ="")) |>
             dplyr::mutate(Municipio = rep(loc, times = dplyr::n()))
     }
 
     ###
-    x <- data %>%
-        dplyr::filter(Municipio %in% c(mun)) %>%
-        dplyr::filter(Semana.Epidemiologica %in% c(1:(lubridate::week(Sys.time())-1))) %>%
+    x <- data |>
+        dplyr::filter(Municipio %in% c(mun)) |>
+        dplyr::filter(Semana.Epidemiologica %in% c(1:(lubridate::week(Sys.time())-1))) |>
         dplyr::mutate(man = as.numeric(Manzana),
-                      sec = as.numeric(sector)) %>%
+                      sec = as.numeric(sector)) |>
         dplyr::mutate(sec_manz = paste(sec, man, sep =""))
-    y <- data %>%
-        dplyr::filter(Municipio %in% c(mun)) %>%
-        dplyr::filter(Semana.Epidemiologica == lubridate::week(Sys.time())-1) %>%
+    y <- data |>
+        dplyr::filter(Municipio %in% c(mun)) |>
+        dplyr::filter(Semana.Epidemiologica == lubridate::week(Sys.time())-1) |>
         dplyr::mutate(man = as.numeric(Manzana),
-                      sec = as.numeric(sector)) %>%
+                      sec = as.numeric(sector)) |>
         dplyr::mutate(sec_manz = paste(sec, man, sep =""))
     ###
     z_x <-  dplyr::left_join(x = z[, c(-9,-10, -11,-12)],
                              y = x,
-                             by = c("sec_manz", "Municipio")) %>%
-        dplyr::mutate(avance = rep("Acumulado", times = dplyr::n())) %>%
+                             by = c("sec_manz", "Municipio")) |>
+        dplyr::mutate(avance = rep("Acumulado", times = dplyr::n())) |>
         dplyr::filter(!is.na(sector))
     z_y <-  dplyr::left_join(x = z[, c(-9,-10, -11,-12)],
                              y = y,
-                             by = c("sec_manz", "Municipio")) %>%
-        dplyr::mutate(avance = rep("En la semana", times = dplyr::n())) %>%
+                             by = c("sec_manz", "Municipio")) |>
+        dplyr::mutate(avance = rep("En la semana", times = dplyr::n())) |>
         dplyr::filter(!is.na(sector))
 
     if(week == TRUE){
-        zx <- z_y %>%
+        zx <- z_y |>
             dplyr::mutate("Criterio_Operativo" = ifelse(Cobertura.en.Manzana <= 50, "Deficiente",
                                                         ifelse(Cobertura.en.Manzana >= 51 &
                                                                    Cobertura.en.Manzana <= 69,"Regular",
@@ -86,7 +86,7 @@ action_map <- function(data, mun, cve_mpo, loc, week, num_loc, blocks){
         zx
 
     } else {
-        zx <- z_x %>%
+        zx <- z_x |>
             dplyr::mutate("Criterio_Operativo" = ifelse(Cobertura.en.Manzana <= 50, "Deficiente",
                                                         ifelse(Cobertura.en.Manzana >= 51 &
                                                                    Cobertura.en.Manzana <= 69,"Regular",
